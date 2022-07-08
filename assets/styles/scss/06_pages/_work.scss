@@ -1,0 +1,45 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the work page.
+// -----------------------------------------------------------------------------
+
+@use '../01_abstracts/index' as *;
+
+#work.page {
+  #main {
+    .intro-text {
+      span.breadcrumb {
+        &::after {
+          left: 4.5rem;
+        }
+      }
+    }
+  }
+
+  #hero-image {
+    background-image: url('/assets/images/hero/work/hero-work-1920w.jpg');
+  }
+
+  #featured-cases-section {
+    .work-wrapper {
+      margin: calc(var(--section-padding) * 0.5) 0;
+
+      .grid {
+        height: 100%;
+
+        .card {
+          margin-top: calc(var(--section-padding) + clamp(60px, 5vw, 150px));
+        }
+
+        #globus-wine-card {
+          @include mq(xxl) {
+            transform: translateY(230px);
+          }
+        }
+      }
+    }
+  }
+
+  #footer {
+    margin-top: calc(var(--section-padding) + clamp(30px, 5vw, 150px));
+  }
+}

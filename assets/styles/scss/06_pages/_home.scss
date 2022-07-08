@@ -1,0 +1,152 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+@use '../01_abstracts/index' as *;
+
+#home.page {
+  #main {
+    header {
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+
+      .intro-text {
+        position: absolute;
+        gap: 4rem;
+        top: 30vh;
+        gap: clamp(16px, 3vh, 3rem);
+        margin: 0 var(--section-margin);
+        color: var(--light-1);
+        z-index: 5;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        @media (min-height: 600px) {
+          top: 35vh;
+        }
+
+        @media (min-height: 700px) {
+          top: 35vh;
+        }
+
+        @media (min-height: 800px) {
+          top: 45vh;
+        }
+
+        @media (min-height: 900px) {
+          top: 40vh;
+        }
+
+        .inner {
+          display: flex;
+          flex-direction: column;
+          gap: clamp(2rem, 4vh, 4rem);
+        }
+
+        p {
+          font-family: var(--font-1);
+          font-style: normal;
+          font-weight: 700;
+          font-size: clamp(2.125rem, 6vw, 3vw);
+          line-height: 155%;
+          color: var(--light-1);
+          @include mq(xxl) {
+            line-height: 130%;
+          }
+        }
+      }
+
+      .scroll-icon {
+        position: absolute;
+        bottom: var(--header-size);
+        margin: 0 var(--section-margin);
+        left: 0;
+        z-index: 5;
+
+        svg {
+          width: clamp(44px, 5vw, 70px);
+          height: clamp(44px, 5vw, 70px);
+          opacity: 0.6;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    #intro-section {
+      .what-we-do-text {
+        font-size: clamp(2.875rem, 7vw, 9.375rem);
+        font-family: var(--font-1);
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.15;
+        margin-top: calc(var(--section-padding) * 0.5);
+
+        @include mq(qhd) {
+          max-width: 125rem;
+        }
+      }
+    }
+
+    #services-section {
+      .services-wrapper {
+        :first-child {
+          .services-container {
+            margin-top: calc(var(--section-padding) * 0.5);
+          }
+        }
+
+        .services-container {
+          margin-top: var(--section-padding);
+          h3 {
+            margin-top: 2rem;
+          }
+          .call-to-action {
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+
+    #work-section {
+      .work-wrapper {
+        margin-top: calc(var(--section-padding) * 0.5);
+
+        .grid {
+          height: 100%;
+
+          .card {
+            margin-top: calc(var(--section-padding) + clamp(60px, 5vw, 150px));
+          }
+
+          #globus-wine-card {
+            @include mq(xxl) {
+              transform: translateY(230px);
+            }
+          }
+        }
+      }
+    }
+
+    #big-type-message-section-1 {
+      padding: calc(var(--section-padding) + clamp(60px, 5vw, 150px)) 0 0;
+
+      @include mq(xxl) {
+        padding: 530px 0 0;
+      }
+    }
+
+    #news-section {
+      margin-right: 0;
+    }
+    #insights-section {
+      margin-right: 0;
+      margin-bottom: var(--section-padding);
+    }
+  }
+}

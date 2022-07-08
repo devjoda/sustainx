@@ -1,0 +1,23 @@
+// -----------------------------------------------------------------------------
+// This file imports and compiles to styles.css
+// -----------------------------------------------------------------------------
+
+@charset "UTF-8";
+
+// 1. Configuration and helpers
+@use '01_abstracts/index' as *;
+
+// 2. Vendors and third-party
+@use '02_vendors/index' as *;
+
+// 3. Base stuff
+@use '03_base/index' as *;
+
+// 4. Layout-related sections
+@use '04_layout/index' as *;
+
+// 5. Components
+@use '05_components/index' as *;
+
+// 6. Page-specific styles
+@use '06_pages/index' as *;

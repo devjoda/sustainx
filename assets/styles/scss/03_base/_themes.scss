@@ -1,0 +1,217 @@
+// -----------------------------------------------------------------------------
+// This file contains all theme styling
+// -----------------------------------------------------------------------------
+
+@use '../01_abstracts/index' as *;
+
+// Body styling themes
+body {
+  &.dark-1 {
+    #main {
+      background-color: var(--dark-1);
+
+      header {
+        .intro-text {
+          p,
+          span {
+            color: var(--light-1);
+          }
+        }
+      }
+    }
+
+    .section {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      span {
+        color: var(--light-1);
+      }
+    }
+
+    .card {
+      .text-wrapper {
+        background-color: var(--dark-1);
+      }
+    }
+
+    .big-type-message {
+      color: var(--dark-2);
+    }
+
+    #hero-background-color {
+      background-color: var(--dark-1);
+    }
+
+    .hero-title {
+      color: var(--light-1);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--light-1);
+
+      &:hover {
+        background-color: var(--dark-3);
+      }
+    }
+  }
+
+  &.light-1 {
+    header {
+      .intro-text {
+        p,
+        span {
+          color: var(--dark-1);
+        }
+      }
+    }
+    #main {
+      background-color: var(--light-1);
+    }
+
+    .section {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      span {
+        color: var(--dark-1);
+      }
+    }
+
+    .big-type-message {
+      color: var(--light-3);
+    }
+
+    .card {
+      .text-wrapper {
+        background-color: var(--light-1);
+      }
+    }
+
+    #hero-background-color {
+      background-color: var(--light-1);
+    }
+
+    .hero-title {
+      color: var(--dark-1);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--dark-1);
+
+      &:hover {
+        background-color: var(--dark-3);
+      }
+    }
+  }
+}
+
+// Main header styling themes
+
+#main-header {
+  &.dark-1 {
+    background-color: var(--dark-1);
+
+    #site-logo-wrapper {
+      border-color: transparent;
+
+      &:not(.no-accent):hover {
+        background: var(--accent-1);
+        #site-logo {
+          background-color: var(--accent-1);
+          border-color: var(--accent-1);
+        }
+      }
+
+      #site-logo {
+        border-color: transparent;
+        background-color: var(--dark-1);
+
+        &.transparent {
+          border-color: var(--dark-1);
+          background-color: transparent;
+          path {
+            fill: var(--dark-1);
+          }
+        }
+
+        path {
+          fill: var(--light-1);
+        }
+      }
+    }
+  }
+  &.light-1 {
+    background-color: var(--light-1);
+
+    #site-logo-wrapper {
+      border-color: transparent;
+
+      &:not(.no-accent):hover {
+        background: var(--accent-1);
+        #site-logo {
+          border-color: var(--accent-1);
+          background-color: var(--accent-1);
+        }
+      }
+
+      #site-logo {
+        border-color: transparent;
+        background-color: var(--light-1);
+
+        &.transparent {
+          background-color: transparent;
+          border-color: var(--light-1);
+
+          path {
+            fill: var(--light-1);
+          }
+        }
+
+        path {
+          fill: var(--dark-1);
+        }
+      }
+    }
+  }
+}
+
+// Main navigation styling themes
+#main-navigation {
+  &.dark-1 {
+    #main-nav {
+      li.menu-item * {
+        color: var(--dark-1);
+      }
+    }
+    #burger-open {
+      svg {
+        path {
+          fill: var(--dark-1);
+        }
+      }
+    }
+  }
+  &.light-1 {
+    #main-nav {
+      li.menu-item * {
+        color: var(--light-1);
+      }
+    }
+    #burger-open {
+      svg {
+        path {
+          fill: var(--light-1);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the all sections
+// -----------------------------------------------------------------------------
+
+@use '../01_abstracts/mixins' as *;
+
+body section.section,
+body div.section {
+  padding: var(--section-padding) 0 0;
+  margin: 0 var(--section-margin);
+  transition: padding var(--transition);
+  position: relative;
+  z-index: 1;
+
+  .container,
+  .container-fluid {
+    * {
+      z-index: 1;
+    }
+  }
+
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    overflow: hidden;
+
+    img,
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+  }
+
+  &.no-padding-top {
+    padding-top: 0;
+  }
+
+  &.no-padding-bottom {
+    padding-bottom: 0;
+  }
+}
+
+.big-type-message-section {
+  user-select: none;
+  padding: var(--section-padding) 0 0;
+  margin: 0 var(--section-margin);
+  width: 300vw;
+  transition: var(--transition);
+  span {
+    font-family: var(--font-1);
+    font-weight: 700;
+    &.big-type-message {
+      font-size: 16.5vw;
+    }
+  }
+}
+
+.cta-section {
+  img {
+    width: 100%;
+    height: 400px;
+
+    @include mq(lg) {
+      height: 740px;
+    }
+  }
+
+  .text {
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include mq(lg) {
+      grid-column-start: 7;
+      grid-column-end: 13;
+    }
+
+    p {
+      font-family: var(--font-2);
+      font-style: normal;
+      font-weight: 400;
+      font-size: clamp(1rem, 1.5vw, 1.5rem);
+      line-height: 160%;
+    }
+
+    h3 {
+      margin: 0;
+      font-family: var(--font-1);
+      font-style: normal;
+      font-weight: 700;
+      font-size: clamp(3rem, 4.75vw, 6.44rem);
+      line-height: 1.2;
+      letter-spacing: -4.5px;
+    }
+
+    .call-to-action {
+      margin-top: 2.5rem;
+      padding: 0;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to forms, inputs etc.
+// -----------------------------------------------------------------------------
+
+@use '../01_abstracts/index' as *;
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 2rem;
+  padding-left: 10px;
+  border: 2px solid var(--dark-1);
+  display: flex;
+  align-items: center;
+  height: 34px;
+  color: var(--dark-1);
+
+  &:focus {
+    outline: 0;
+  }
+}

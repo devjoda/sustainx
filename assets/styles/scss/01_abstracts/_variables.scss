@@ -1,0 +1,101 @@
+// -----------------------------------------------------------------------------
+// This file contains all site-wide SCSS variables.
+// -----------------------------------------------------------------------------
+
+// Global site breakpoints
+
+@use '../01_abstracts/mixins' as *;
+
+:root {
+  // Accent color
+  --accent-1: #29fe85;
+
+  // Dark color
+  --dark-1: #181818;
+  --dark-2: #373737;
+  --dark-3: #b4b4b4;
+
+  // Light color
+  --light-1: #fdfdfd;
+  --light-2: #f2f4f2;
+  --light-3: #eaeaea;
+
+  // Theme
+  --svanehoej: #af3a3a;
+  --globus-wine: #9c4c93;
+  --polytech: #157ea4;
+  --jobs: #fef526;
+
+  // Fonts
+  --font-1: 'itc-avant-garde-gothic-pro', sans-serif;
+  --font-2: 'Ibarra Real Nova', serif;
+
+  // Layout
+  --content-width: 100%;
+  --section-padding: 100px;
+  --section-margin: clamp(16px, 4.5vw, 80px);
+  --page-margin: 1rem;
+
+  // Header
+  --header-size: clamp(44px, 4vw, 85px);
+  --header-size-large: clamp(44px, 7.5vw, 130px);
+  --header-margin: 16px;
+  --header-initial-height: 50px;
+
+  // Transitions
+  --transition: 300ms ease-out;
+  --transition-slow: 550ms ease-out;
+  --transition-color: color 300ms ease-out;
+
+  // Utilities
+  --border-radius: 0;
+  --box-shadow: rgb(0 0 0 / 8%) 0 4px 40px 0px;
+
+  // Gutter
+  --gutter-x: 9px;
+
+  // Cursors
+  --default-cursor-dark-1: url('/assets/images/svg/cursor/cursor-default-dark-1.svg'), default;
+  --pointer-cursor-dark-1: url('/assets/images/svg/cursor/cursor-pointer-dark-1.svg') 10 0, pointer;
+
+  // Small Breakpoint
+  @include mq(sm) {
+    --section-padding: 125px;
+    --page-margin: 1.5rem;
+  }
+
+  // Medium Breakpoint
+  @include mq(md) {
+    --section-padding: 150px;
+    --gutter-x: 16px;
+    --page-margin: 2rem;
+  }
+
+  // Large Breakpoint
+  @include mq(lg) {
+    --section-padding: 175px;
+    --gutter-x: 20px;
+    --page-margin: 2.5rem;
+    --header-margin: 50px;
+    --header-initial-height: 80px;
+  }
+
+  // XL Breakpoint
+  @include mq(xl) {
+    --section-padding: 200px;
+    --gutter-x: 26px;
+    --page-margin: 3rem;
+  }
+
+  // XXL Breakpoint
+  @include mq(xxl) {
+    --section-padding: 250px;
+    --page-margin: 4rem;
+  }
+
+  // QuadHD + 4K Breakpoint
+  @include mq(qhd) {
+    --section-padding: 300px;
+    --page-margin: 5rem;
+  }
+}

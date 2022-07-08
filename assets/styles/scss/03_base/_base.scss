@@ -1,0 +1,173 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+@use '../01_abstracts/index' as *;
+
+// Font smoothing + Box sizing
+*,
+*::before,
+*::after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+// Basic root element
+html {
+  font-size: 100%;
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+  cursor: var(--default-cursor-dark-1);
+}
+
+// Basic body styling
+body {
+  overflow: overlay;
+  overflow-x: hidden;
+  height: 100%;
+  scroll-behavior: smooth;
+  position: relative;
+
+  svg,
+  a,
+  a.call-to-action,
+  li,
+  button {
+    cursor: var(--pointer-cursor-dark-1);
+  }
+
+  #main,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  p {
+    transition: var(--transition);
+  }
+}
+
+.page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+// Wrapper styling
+#wrapper {
+  overflow: hidden; // Remove if position: sticky is needed on element
+}
+
+// Basic styling for links
+a {
+  font-family: var(--font-1);
+  text-decoration: none;
+  position: relative;
+}
+
+// Basic image styling
+img {
+  display: flex;
+  user-select: none;
+  max-width: 100%;
+  height: auto;
+  transition: var(--transition);
+  pointer-events: none;
+  object-fit: cover;
+  object-position: center center;
+
+  &.full {
+    margin-top: var(--section-padding);
+    height: 100vh;
+    width: 100%;
+  }
+}
+
+figure {
+  &.image-figure {
+    overflow: hidden;
+    margin: 0;
+  }
+}
+
+// Selection color
+::selection {
+  background: var(--accent-1);
+  color: var(--dark-1);
+}
+
+// Remove arrows from number fields
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// Remove arrows from number fields in Firefox
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+// No scrolling class
+.no-scroll {
+  overflow: hidden;
+}
+
+.overflow-auto {
+  overflow: auto !important;
+}
+
+.smooth-scroll {
+  scroll-behavior: smooth !important;
+}
+
+// Hidden class
+.hidden,
+[hidden] {
+  opacity: 0 !important;
+  visibility: visible !important;
+  display: none !important;
+}
+
+// Default SVG behavior
+svg {
+  transition: var(--transition);
+  transform-origin: center;
+
+  path,
+  rect,
+  circle {
+    transition: var(--transition);
+    transform-origin: inherit;
+  }
+}
+
+// Scrollbar styling
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+// Scrollbar Thumb
+body::-webkit-scrollbar-thumb {
+  border: 6px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: 25px;
+}
+
+#fade-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 9999;
+  background-color: var(--dark-1);
+}

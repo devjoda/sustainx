@@ -1,0 +1,66 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+@use '../01_abstracts/index' as *;
+
+// Standard button mixin
+@mixin Button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  padding: 0;
+  height: 2rem;
+  width: fit-content;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0;
+  max-width: 420px;
+  background-color: transparent;
+  color: var(--light-1);
+  font-family: var(--font-1);
+  transition: var(--transition);
+  font-size: clamp(1.125rem, 1.5vw, 1.75rem);
+  text-transform: none;
+  text-decoration: none;
+  border-radius: 0;
+  white-space: nowrap;
+  outline: 0;
+  user-select: none;
+  border: 2px solid var(--dark-1);
+  &:hover {
+    color: var(--accent-1);
+  }
+
+  &:active {
+    // transform: translateY(3px);
+    // background-color: black;
+    // border: 1px solid black;
+  }
+}
+
+// Button wrapper
+.btn-wrapper {
+  display: flex;
+
+  .btn {
+    &:first-of-type {
+      margin-right: 1.5rem;
+    }
+  }
+}
+
+// Main button styling
+.btn,
+.frm_button_submit {
+  @include Button;
+
+  // White button
+  &.black {
+    color: var(--wp--preset--color--dark-b);
+    border-color: var(--dark-1);
+    transition: var(--transition);
+  }
+}

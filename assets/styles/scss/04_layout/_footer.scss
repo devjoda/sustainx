@@ -1,0 +1,248 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site
+// -----------------------------------------------------------------------------
+
+@use '../01_abstracts/index' as *;
+@use '../04_layout/grid' as *;
+
+body footer#footer {
+  padding: var(--section-margin) var(--section-margin) 0;
+  background: var(--accent-1);
+  position: relative;
+  min-height: 100vh;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h3 {
+    color: var(--dark-1);
+  }
+
+  .grid {
+    color: var(--dark-1);
+    @include mq(xl) {
+      row-gap: 1rem;
+    }
+
+    p::after {
+      @include divider();
+      margin-top: 1rem;
+      background-color: var(--dark-1);
+      left: calc(var(--section-margin) * -1);
+    }
+
+    .heading {
+      margin-top: var(--section-padding);
+      font-size: clamp(2.75rem, 7vw, 7.5rem);
+
+      @include mq(xl) {
+        line-height: 1.1;
+        margin-top: 0;
+      }
+
+      br {
+        display: none;
+
+        @include mq(xl) {
+          display: unset;
+        }
+      }
+    }
+
+    .contact-info {
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        margin-top: clamp(2rem, 5vw, 3rem);
+
+        @include mq(sm) {
+          display: grid;
+          grid-template-columns: repeat(12, 1fr);
+          grid-gap: 1em;
+        }
+
+        @include mq(xl) {
+          margin-top: 0;
+        }
+
+        .container {
+          margin-top: clamp(2rem, 5vw, 3rem);
+
+          @include mq(sm) {
+            grid-column: span 6;
+          }
+
+          &.business,
+          &.media {
+            @include mq(xl) {
+              margin-top: 0;
+            }
+          }
+
+          p {
+            font-size: clamp(1.125rem, 2.25vw, 1.375rem);
+            color: var(--dark-1);
+            font-family: var(--font-1);
+            font-weight: 700;
+            line-height: 1.1;
+            font-style: normal;
+          }
+
+          a {
+            font-size: clamp(1.125rem, 2.25vw, 1.375rem);
+            display: block;
+            margin-top: clamp(1rem, 3vw, 1.5rem);
+            color: var(--dark-1);
+            font-family: var(--font-2);
+            font-weight: 400;
+            line-height: 1.1;
+            font-style: normal;
+            text-decoration-line: underline;
+          }
+        }
+      }
+    }
+
+    .newsletter {
+      p {
+        font-size: clamp(1.125rem, 2.25vw, 1.375rem);
+        color: var(--dark-1);
+        font-family: var(--font-1);
+        font-weight: 700;
+        line-height: 1.1;
+        font-style: normal;
+        margin-top: 4rem;
+      }
+
+      label {
+        font-size: clamp(1.125rem, 2.25vw, 1.375rem);
+        display: block;
+        margin-top: clamp(1rem, 3vw, 1.5rem);
+        color: var(--dark-1);
+        font-family: var(--font-2);
+        font-weight: 400;
+        line-height: 1.1;
+        font-style: normal;
+      }
+
+      .wrapper {
+        display: flex;
+
+        input {
+          margin-top: clamp(1rem, 3vw, 1.5rem);
+          background-color: var(--accent-1);
+          height: 50px;
+          width: 100%;
+          max-width: 295px;
+          @include mq(sm) {
+            max-width: 48vw;
+          }
+
+          &::placeholder {
+            color: #32a162;
+            font-family: var(--font-2);
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1.125rem;
+            line-height: 1.1;
+          }
+
+          @include mq(xl) {
+            max-width: 485px;
+          }
+        }
+
+        button.btn {
+          margin-top: clamp(1rem, 3vw, 1.5rem);
+          font-family: var(--font-1);
+          font-style: normal;
+          font-weight: 700;
+          font-size: clamp(1rem, 4vw, 1.25rem);
+          line-height: 1.5rem;
+          height: 50px;
+          border-left: 0;
+          background-color: var(--dark-1);
+          padding: 0.5rem 2rem 0rem;
+          max-width: 140px;
+
+          &:hover {
+            color: var(--light-1);
+          }
+        }
+      }
+    }
+
+    .svg-wrapper {
+      align-self: flex-end;
+      margin-top: 1rem;
+
+      svg.desktop {
+        cursor: (var(--cursor-default-dark-1));
+        margin-top: 2rem;
+        padding-right: var(--section-margin);
+        max-width: calc(100vw - var(--section-margin));
+      }
+    }
+
+    .copyright {
+      display: flex;
+      // flex-direction: column;
+      align-items: flex-end;
+      gap: 2rem;
+      white-space: nowrap;
+      max-width: 750px;
+
+      small {
+        font-family: var(--font-2);
+        font-style: normal;
+        font-weight: 400;
+        font-size: clamp(0.875rem, 2vw, 1.25rem);
+        line-height: 1;
+        color: var(--dark-1);
+        padding-bottom: 0.5rem;
+      }
+
+      span {
+        @extend small;
+        display: unset;
+      }
+
+      a {
+        @extend small;
+        display: none;
+        text-decoration: underline;
+
+        @include mq(xxl) {
+          display: unset;
+        }
+      }
+    }
+  }
+
+  #top {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-1);
+    height: 100px;
+    width: 80px;
+    color: var(--light-1);
+    font-family: var(--font-1);
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(1rem, 5vw, 1.25rem);
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    user-select: none;
+    cursor: var(--pointer-cursor-dark-1);
+
+    @include mq(qhd) {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+@use '../01_abstracts/index' as *;
+
+// Standard cta
+.call-to-action {
+  position: relative;
+  padding: 1rem 0;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 0.5vw, 1rem);
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0;
+  max-width: 420px;
+  background-color: transparent;
+  color: var(--light-1);
+  font-family: var(--font-1);
+  font-size: clamp(1.125rem, 1.5vw, 1.75rem);
+  text-transform: none;
+  text-decoration: none;
+  border-radius: 0;
+  white-space: nowrap;
+  overflow: visible;
+  outline: 0;
+  z-index: 9;
+  user-select: none;
+  border: 1px solid var(--red-1);
+
+  span {
+    transition: none;
+
+    &::after {
+      content: '.';
+    }
+  }
+
+  &:hover {
+    span {
+      color: var(--accent-1) !important;
+    }
+    svg {
+      -webkit-animation: rotate-90-cw 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      animation: rotate-90-cw 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+  }
+
+  &:not(:hover) {
+    svg {
+      -webkit-animation: rotate-90-ccw 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      animation: rotate-90-ccw 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+  }
+
+  svg {
+    width: clamp(20px, 2.5vw, 30px);
+    height: clamp(20px, 2.5vw, 30px);
+    margin-bottom: 3px;
+  }
+}

@@ -1,0 +1,98 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the heroes
+// -----------------------------------------------------------------------------
+
+@use '../01_abstracts/mixins' as *;
+
+#main {
+  header {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+
+    .hero-image-wrapper {
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+      overflow-x: hidden;
+
+      #hero-image {
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 0;
+      }
+
+      #hero-background-color {
+        display: none;
+        height: 100%;
+        width: clamp(300px, 23vw, 700px);
+
+        @include mq(lg) {
+          display: unset;
+        }
+      }
+    }
+
+    #hero-video {
+      overflow-x: hidden;
+      video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: 1;
+      }
+    }
+
+    .intro-text {
+      position: absolute;
+      gap: 4rem;
+      top: 25vh;
+      gap: clamp(16px, 3vh, 3rem);
+      margin: 0 var(--section-margin);
+      color: var(--light-1);
+      z-index: 5;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      @media (min-height: 600px) {
+        top: 45vh;
+      }
+
+      @media (min-height: 700px) {
+        top: 30vh;
+      }
+
+      @media (min-height: 800px) {
+        top: 30vh;
+      }
+
+      @media (min-height: 900px) {
+        top: 35vh;
+      }
+
+      .inner {
+        display: flex;
+        flex-direction: column;
+      }
+
+      p {
+        font-family: var(--font-1);
+        font-style: normal;
+        font-weight: 700;
+        font-size: clamp(3rem, 7.5vw, 8.5rem);
+        line-height: 1.4;
+        @include mq(xxl) {
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+}

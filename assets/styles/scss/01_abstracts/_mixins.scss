@@ -1,0 +1,63 @@
+// -----------------------------------------------------------------------------
+// This file contains all site-wide SCSS mixins.
+// -----------------------------------------------------------------------------
+
+// Set up SASS map
+@use 'sass:map';
+
+// Breakpoints map
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  qhd: 1920px,
+);
+
+// Media min-width query mixin
+@mixin mq($key) {
+  $size: map.get($breakpoints, $key);
+
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+// Media max-width query mixin
+@mixin mq-max($key) {
+  $size: map.get($breakpoints, $key);
+
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
+// Media in-width height query mixin
+@mixin mq-h($key) {
+  $size: map.get($breakpoints, $key);
+
+  @media only screen and (min-height: $size) {
+    @content;
+  }
+}
+
+// Media max-width height query mixin
+@mixin mq-hmax($key) {
+  $size: map.get($breakpoints, $key);
+
+  @media only screen and (max-height: $size) {
+    @content;
+  }
+}
+
+// Dividers
+@mixin divider($width: clamp(10px, 3.5vw, 53px), $height: 3px, $margin-top: 0, $margin-bottom: 0) {
+  content: '';
+  display: flex;
+  background-color: var(--accent-1);
+  width: $width;
+  height: $height;
+  margin-top: $margin-top;
+  margin-bottom: $margin-bottom;
+}

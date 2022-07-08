@@ -1,0 +1,219 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the about page.
+// -----------------------------------------------------------------------------
+
+@use '../01_abstracts/index' as *;
+
+#about.page {
+  #main {
+    .intro-text {
+      span.breadcrumb {
+        &::after {
+          left: 5.1rem;
+        }
+      }
+    }
+  }
+
+  #hero-image {
+    background-image: url('/assets/images/hero/about/hero-about-1920w.jpg');
+  }
+
+  #intro-section {
+    .lead + p {
+      margin-top: clamp(50px, 5vw, 100px);
+    }
+  }
+
+  #culture-statement-section {
+    .svg-wrapper {
+      margin-top: clamp(100px, 15vw, 200px);
+      pointer-events: none;
+
+      svg {
+        max-width: 600px;
+
+        @include mq(xl) {
+          max-width: unset;
+        }
+      }
+    }
+  }
+
+  #vision-and-mission-section {
+    .wrapper {
+      margin-top: clamp(100px, 15vw, 200px);
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      @include mq(xxl) {
+        flex-direction: row;
+      }
+
+      .svg-wrapper {
+        max-height: 80%;
+        max-width: 80%;
+
+        svg {
+          max-height: 255px;
+          max-width: 269px;
+
+          @include mq(xxl) {
+            max-height: 357px;
+            max-width: 338px;
+          }
+        }
+      }
+
+      .vision-and-mission {
+        margin-top: 100px;
+
+        @include mq(lg) {
+          display: flex;
+          column-gap: 5.5rem;
+          row-gap: 2rem;
+        }
+
+        @include mq(xxl) {
+          margin: 0 0 0 clamp(150px, 12vw, 200px);
+          flex-wrap: nowrap;
+        }
+
+        .mission {
+          margin-top: 75px;
+
+          @include mq(lg) {
+            margin: 0;
+          }
+        }
+
+        div {
+          max-width: 24.27rem;
+
+          h3 {
+            position: relative;
+            font-family: var(--font-1);
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.2rem;
+            line-height: 1.1;
+            color: var(--accent-1);
+            margin: 0;
+
+            &.title-vision {
+              &::after {
+                @include divider;
+                position: absolute;
+                top: 0.4063rem;
+                left: 4.94rem;
+              }
+            }
+
+            &.title-mission {
+              &::after {
+                @include divider;
+                position: absolute;
+                top: 0.4063rem;
+                left: 5.9rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #the-tripple-bottom-line-section {
+    .wrapper {
+      margin-top: 100px;
+      display: flex;
+      gap: 100px;
+      flex-direction: column;
+
+      .ttbl-intro {
+        max-width: 569px;
+        line-height: 1.6;
+      }
+
+      .svg-wrapper {
+        pointer-events: none;
+
+        svg {
+          max-width: 377px;
+        }
+      }
+
+      .ttbl-description {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+
+        @include mq(lg) {
+          flex-direction: row;
+          gap: clamp(4rem, 8vw, 7.5rem);
+        }
+
+        h3 {
+          margin: 0;
+          font-family: var(--font-1);
+          font-style: normal;
+          font-weight: 700;
+          font-size: 2.25rem;
+          line-height: 43px;
+          display: flex;
+          align-items: center;
+        }
+
+        .people {
+          max-width: 650px;
+          @include mq(lg) {
+            max-width: 320px;
+          }
+
+          h3 {
+            color: #e59bff;
+          }
+        }
+
+        .planet {
+          max-width: 650px;
+          @include mq(lg) {
+            max-width: 320px;
+          }
+
+          h3 {
+            color: #28c1ff;
+          }
+        }
+
+        .profit {
+          max-width: 650px;
+          @include mq(lg) {
+            max-width: 332px;
+          }
+
+          h3 {
+            color: var(--accent-1);
+          }
+        }
+      }
+    }
+  }
+
+  #people-section {
+    padding-bottom: var(--section-padding);
+
+    .super-power {
+      font-family: var(--font-1);
+      font-style: normal;
+      font-weight: 700;
+      font-size: clamp(3rem, 10vw, 7rem);
+      line-height: 1.1;
+      max-width: 50rem;
+    }
+
+    .grid {
+      margin-top: clamp(150px, 12vw, 200px);
+    }
+  }
+}
