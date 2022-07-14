@@ -58,7 +58,7 @@ export default class CrudService {
    */
   static readPage() {
     // Få fat i stinavn og formatér det
-    let currentPathname = location.pathname.substring(1, location.pathname.length).replace('.html', '')
+    let currentPathname = location.pathname.substring(10, location.pathname.length).replace('.html', '')
     // Check om stinavn findes i storage-service
     const page = StorageService.pathnames[currentPathname]
     VerboseService.print(`Found page file path [${page}]`)

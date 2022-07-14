@@ -9,7 +9,7 @@ import VerboseService from './verbose-service.js'
  */
 export default class StorageService {
   static pathnames = {
-    'sustainx/': 'home',
+    '': 'home',
     index: 'home',
     services: 'services',
     work: 'work',
