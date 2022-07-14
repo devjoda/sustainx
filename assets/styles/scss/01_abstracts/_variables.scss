@@ -55,8 +55,8 @@
   --gutter-x: 9px;
 
   // Cursors
-  --default-cursor-dark-1: url('/assets/images/svg/cursor/cursor-default-dark-1.svg'), default;
-  --pointer-cursor-dark-1: url('/assets/images/svg/cursor/cursor-pointer-dark-1.svg') 10 0, pointer;
+  --default-cursor-dark-1: url('../../../images/svg/cursor/cursor-default-dark-1.svg'), default;
+  --pointer-cursor-dark-1: url('../../../images/svg/cursor/cursor-pointer-dark-1.svg') 10 0, pointer;
 
   // Small Breakpoint
   @include mq(sm) {
