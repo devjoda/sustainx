@@ -25,6 +25,10 @@ export default class EventListenerService {
     }
   }
 
+  static bindOnResizeWindow(siteLogoClasses) {
+    window.addEventListener('resize', this.toggleThemeColors, false)
+  }
+
   static translatebigTypeMessageSection(event) {
     let target
     for (const bigTypeMessageSection of StorageService.page.bigTypeMessageSections) {
@@ -38,10 +42,24 @@ export default class EventListenerService {
     }
     let translateX = target.offsetTop - window.pageYOffset
     if (translateX < 0) {
-      target.domElement.style.transform = `translateX(${translateX * 2.5}px)`
+      target.domElement.style.transform = `translateX(${translateX * 2.75}px)`
     } else {
       target.domElement.style.transform = `translateX(0px)`
     }
+  }
+
+  static toggleSiteLogoThemeColors(siteLogoClasses, event) {
+    window.addEventListener('resize', () => {
+      const mainHeader = StorageService.domElements.get('main-header')
+      const viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+      if (window.pageYOffset <= document.querySelector('#main header').offsetHeight) {
+        if (viewportWidth >= 992) {
+          mainHeader.classList.replace(siteLogoClasses[0], siteLogoClasses[1])
+        } else {
+          mainHeader.classList.replace(siteLogoClasses[1], siteLogoClasses[0])
+        }
+      }
+    })
   }
 
   static onClickBurgerOpen(event) {
@@ -117,7 +135,7 @@ export default class EventListenerService {
   }
 
   static async changeLocationHrefWithTransition(event) {
-    event.stopPropagation()
+    sessionStorage.setItem('preventScrollToTop', 1)
     const targetHref = event.target.href
     if (targetHref) {
       await new Promise(() => {

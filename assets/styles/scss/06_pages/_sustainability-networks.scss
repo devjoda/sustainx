@@ -1,0 +1,98 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the sustainability networks page.
+// -----------------------------------------------------------------------------
+
+@use '../01_abstracts/index' as *;
+
+#sustainability-networks.page {
+  #main {
+    .intro-text {
+      .breadcrumb {
+        &::after {
+          left: 13em;
+        }
+      }
+    }
+  }
+
+  #hero-image {
+    background-image: url('../../../images/hero/sustainability-networks/hero-sustainability-networks-1920w.jpg');
+    filter: brightness(0.9);
+
+    @include mq(lg) {
+      filter: brightness(1);
+    }
+  }
+
+  #intro-section {
+    .body {
+      margin-top: 100px;
+    }
+  }
+
+  #members-section {
+    .logo-wrapper {
+      margin-top: clamp(150px, 15vw, 200px);
+      display: flex;
+      gap: 7rem;
+      flex-wrap: wrap;
+
+      .image-wrapper {
+        height: 100%;
+        img {
+          max-height: clamp(75px, 5vw, 110px);
+          height: 100%;
+        }
+      }
+
+      .svg-wrapper {
+        height: 100%;
+
+        svg {
+          width: 100%;
+          max-height: clamp(75px, 5vw, 110px);
+        }
+      }
+    }
+  }
+
+  #networks-section {
+    .networks-wrapper {
+      margin-top: 0;
+
+      .networks-container {
+        margin-top: clamp(150px, 15vw, 200px);
+
+        .image-wrapper {
+          img {
+            height: 350px;
+            max-width: 650px;
+            width: 100%;
+            object-fit: cover;
+
+            @include mq(xxl) {
+              max-width: unset;
+              height: 100%;
+            }
+          }
+        }
+
+        h3 {
+          margin-top: 1rem;
+        }
+
+        p {
+          margin-top: 1rem;
+        }
+
+        .call-to-action {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+
+  #cta-section {
+    margin-bottom: clamp(100px, 15vw, 200px);
+  }
+}

@@ -28,7 +28,12 @@ body {
       h5,
       h6,
       p,
-      span {
+      span,
+      a,
+      cite,
+      ul,
+      li,
+      .article-list {
         color: var(--light-1);
       }
     }
@@ -39,8 +44,10 @@ body {
       }
     }
 
-    .big-type-message {
-      color: var(--dark-2);
+    .big-type-message-section {
+      .big-type-message {
+        color: var(--dark-2);
+      }
     }
 
     #hero-background-color {
@@ -58,6 +65,91 @@ body {
         background-color: var(--dark-3);
       }
     }
+
+    footer#footer {
+      background: var(--dark-1);
+
+      h3 {
+        color: var(--light-1);
+      }
+
+      .grid {
+        color: var(--light-1);
+        p::after {
+          background-color: var(--light-1);
+        }
+      }
+
+      .contact-info {
+        .wrapper {
+          .container {
+            p {
+              color: var(--light-1);
+            }
+
+            a {
+              color: var(--light-1);
+
+              &:hover {
+                color: var(--accent-1);
+              }
+            }
+          }
+        }
+      }
+
+      .newsletter {
+        p {
+          color: var(--light-1);
+        }
+
+        label {
+          color: var(--light-1);
+        }
+
+        .wrapper {
+          input {
+            background-color: var(--light-1);
+
+            &::placeholder {
+              color: var(--dark-2);
+            }
+          }
+
+          button.btn {
+            background-color: var(--light-1);
+            color: var(--dark-1);
+
+            &:hover {
+              background-color: var(--accent-1);
+              color: var(--dark-1);
+            }
+          }
+        }
+      }
+
+      .copyright {
+        small {
+          color: var(--light-1);
+        }
+
+        a:hover {
+          color: var(--accent-1);
+        }
+      }
+    }
+    #top {
+      background-color: var(--light-1);
+      color: var(--dark-1);
+    }
+
+    #content {
+      a {
+        &:hover {
+          color: var(--accent-1);
+        }
+      }
+    }
   }
 
   &.light-1 {
@@ -69,6 +161,7 @@ body {
         }
       }
     }
+
     #main {
       background-color: var(--light-1);
     }
@@ -81,13 +174,24 @@ body {
       h5,
       h6,
       p,
-      span {
+      span,
+      a,
+      cite,
+      ul,
+      li,
+      .article-list {
         color: var(--dark-1);
+      }
+
+      .count-kicker.dark::after {
+        background-color: var(--dark-1) !important;
       }
     }
 
-    .big-type-message {
-      color: var(--light-3);
+    .big-type-message-section {
+      .big-type-message {
+        color: var(--light-4);
+      }
     }
 
     .card {
@@ -111,6 +215,1326 @@ body {
         background-color: var(--dark-3);
       }
     }
+
+    footer#footer {
+      background: var(--light-1);
+
+      h3 {
+        color: var(--dark-1);
+      }
+
+      .grid {
+        color: var(--dark-1);
+        p::after {
+          background-color: var(--dark-1);
+        }
+      }
+
+      .contact-info {
+        .wrapper {
+          .container {
+            p {
+              color: var(--dark-1);
+            }
+
+            a {
+              color: var(--dark-1);
+
+              &:hover {
+                color: var(--accent-1);
+              }
+            }
+          }
+        }
+      }
+
+      .newsletter {
+        p {
+          color: var(--dark-1);
+        }
+
+        label {
+          color: var(--dark-1);
+        }
+
+        .wrapper {
+          input {
+            border-color: var(--light-1);
+            background-color: var(--dark-1);
+
+            &::placeholder {
+              color: var(--light-3);
+            }
+          }
+
+          button.btn {
+            border-color: var(--light-1);
+            background-color: var(--dark-1);
+            color: var(--light-1);
+
+            &:hover {
+              background-color: var(--accent-1);
+              color: var(--light-1);
+            }
+          }
+        }
+      }
+
+      .copyright {
+        small {
+          color: var(--dark-1);
+        }
+
+        a:hover {
+          color: var(--accent-1);
+        }
+      }
+    }
+
+    #top {
+      background-color: var(--dark-1);
+      color: var(--light-1);
+    }
+
+    #content {
+      a {
+        &:hover {
+          color: var(--accent-1);
+        }
+      }
+    }
+  }
+
+  &.accent-1 {
+    #main {
+      background-color: var(--accent-1);
+
+      header {
+        .intro-text {
+          p,
+          span {
+            color: var(--dark-1);
+          }
+        }
+      }
+    }
+
+    .section {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      span,
+      a,
+      cite,
+      .article-list {
+        color: var(--dark-1);
+      }
+
+      img,
+      .image-wrapper {
+        filter: grayscale(1);
+      }
+
+      .divider,
+      .count-kicker,
+      cite {
+        &::before,
+        &::after {
+          background-color: var(--dark-1) !important;
+        }
+      }
+    }
+
+    #cta-section {
+      filter: grayscale(1);
+    }
+
+    .call-to-action {
+      &:not(.image-cta) {
+        color: var(--dark-1);
+        &:hover {
+          * {
+            color: var(--dark-1) !important;
+          }
+        }
+      }
+    }
+
+    h3::after {
+      background-color: var(--dark-1);
+    }
+
+    .big-type-message-section {
+      .big-type-message {
+        color: var(--dark-1);
+      }
+    }
+
+    .kicker::after {
+      background-color: var(--dark-1) !important;
+    }
+
+    .call-to-action {
+      &:not(.image-cta) {
+        circle {
+          fill: var(--dark-1);
+        }
+        path {
+          fill: var(--accent-1);
+        }
+      }
+    }
+
+    .card {
+      .text-wrapper {
+        background-color: var(--accent-1);
+      }
+    }
+
+    .big-type-message {
+      color: var(--dark-2);
+    }
+
+    #hero-background-color {
+      background-color: var(--accent-1);
+    }
+
+    .hero-title {
+      color: var(--dark-1);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--dark-1);
+
+      &:hover {
+        background-color: var(--dark-1);
+      }
+    }
+
+    footer#footer {
+      background: var(--accent-1);
+
+      h3 {
+        color: var(--dark-1);
+      }
+
+      .grid {
+        color: var(--dark-1);
+        p::after {
+          background-color: var(--dark-1);
+        }
+      }
+
+      .contact-info {
+        .wrapper {
+          .container {
+            p {
+              color: var(--dark-1);
+            }
+
+            a {
+              color: var(--dark-1);
+            }
+          }
+        }
+      }
+
+      .newsletter {
+        p {
+          color: var(--dark-1);
+        }
+
+        label {
+          color: var(--dark-1);
+        }
+
+        .wrapper {
+          input {
+            background-color: var(--accent-1);
+            border-color: var(--dark-1) !important;
+
+            &::placeholder {
+              color: #32a162;
+            }
+          }
+
+          button.btn {
+            background-color: var(--dark-1);
+            border-color: var(--dark-1) !important;
+
+            &:hover {
+              color: var(--light-1);
+            }
+          }
+        }
+      }
+
+      .copyright {
+        small {
+          color: var(--dark-1);
+        }
+      }
+    }
+    #top {
+      background-color: var(--dark-1);
+      color: var(--light-1);
+    }
+
+    #content {
+      a {
+        &:hover {
+          color: var(--dark-1);
+        }
+      }
+    }
+  }
+
+  &.valencia {
+    #main {
+      background-color: var(--valencia);
+
+      header {
+        .intro-text {
+          p,
+          span {
+            color: var(--light-1);
+          }
+
+          .heading {
+            color: var(--valencia);
+          }
+        }
+      }
+    }
+
+    .section {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      span,
+      a,
+      cite,
+      blockquote,
+      ul,
+      li,
+      .article-list {
+        color: var(--light-1);
+      }
+
+      h2 {
+        &::before {
+          background-color: var(--light-1) !important;
+        }
+      }
+
+      .divider,
+      span,
+      cite {
+        &::before,
+        &::after {
+          background-color: var(--light-1) !important;
+        }
+      }
+    }
+
+    .card {
+      .text-wrapper {
+        background-color: var(--valencia);
+      }
+    }
+
+    .big-type-message-section {
+      .big-type-message {
+        color: var(--dark-2);
+      }
+    }
+
+    #hero-background-color {
+      background-color: var(--valencia);
+    }
+
+    .hero-title {
+      color: var(--light-1);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--light-1);
+
+      &:hover {
+        background-color: var(--dark-3);
+      }
+    }
+
+    footer#footer {
+      background: var(--valencia);
+
+      h3 {
+        color: var(--light-1);
+      }
+
+      .grid {
+        color: var(--light-1);
+        p::after {
+          background-color: var(--light-1);
+        }
+      }
+
+      .contact-info {
+        .wrapper {
+          .container {
+            p {
+              color: var(--light-1);
+            }
+
+            a {
+              color: var(--light-1);
+
+              &:hover {
+                color: var(--accent-1);
+              }
+            }
+          }
+        }
+      }
+
+      .newsletter {
+        p {
+          color: var(--light-1);
+        }
+
+        label {
+          color: var(--light-1);
+        }
+
+        .wrapper {
+          input {
+            border-color: var(--valencia) !important;
+            background-color: var(--light-1);
+
+            &::placeholder {
+              color: var(--dark-2);
+            }
+          }
+
+          button.btn {
+            border-color: var(--valencia) !important;
+            background-color: var(--light-1);
+            color: var(--valencia);
+
+            &:hover {
+              background-color: var(--accent-1);
+              color: var(--valencia);
+            }
+          }
+        }
+      }
+
+      .copyright {
+        small {
+          color: var(--light-1);
+        }
+
+        a:hover {
+          color: var(--accent-1);
+        }
+      }
+
+      .svg-wrapper {
+        svg {
+          path {
+            fill: var(--light-1);
+          }
+          line {
+            stroke: var(--light-1);
+          }
+        }
+      }
+    }
+    #top {
+      background-color: var(--light-1);
+      color: var(--valencia);
+    }
+
+    #content {
+      a {
+        &:hover {
+          color: var(--accent-1);
+        }
+      }
+    }
+  }
+
+  &.valencia-light-1 {
+    header {
+      .intro-text {
+        p,
+        span {
+          color: var(--valencia);
+        }
+      }
+    }
+
+    #main {
+      background-color: var(--light-1);
+    }
+
+    .section {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      span,
+      a,
+      cite,
+      .article-list {
+        color: var(--valencia);
+      }
+
+      h2 {
+        &::before {
+          background-color: var(--valencia) !important;
+        }
+      }
+
+      .divider,
+      span,
+      cite {
+        &::before,
+        &::after {
+          background-color: var(--valencia) !important;
+        }
+      }
+    }
+
+    .svg-wrapper.theme-color {
+      * {
+        fill: var(--valencia);
+        stroke: var(--valencia);
+      }
+    }
+
+    .big-type-message-section {
+      .big-type-message {
+        color: var(--light-3);
+      }
+    }
+
+    .card {
+      .text-wrapper {
+        background-color: var(--light-1);
+      }
+    }
+
+    #hero-background-color {
+      background-color: var(--light-1);
+    }
+
+    .hero-title {
+      color: var(--valencia);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--valencia);
+
+      &:hover {
+        background-color: var(--dark-3);
+      }
+    }
+
+    footer#footer {
+      background: var(--light-1);
+
+      h3 {
+        color: var(--valencia);
+      }
+
+      .grid {
+        color: var(--valencia);
+        p::after {
+          background-color: var(--valencia);
+        }
+      }
+
+      .contact-info {
+        .wrapper {
+          .container {
+            p {
+              color: var(--valencia);
+            }
+
+            a {
+              color: var(--valencia);
+
+              &:hover {
+                color: var(--accent-1);
+              }
+            }
+          }
+        }
+      }
+
+      .newsletter {
+        p {
+          color: var(--valencia);
+        }
+
+        label {
+          color: var(--valencia);
+        }
+
+        .wrapper {
+          input {
+            border-color: var(--light-1);
+            background-color: var(--valencia);
+
+            &::placeholder {
+              color: var(--light-3);
+            }
+          }
+
+          button.btn {
+            border-color: var(--light-1);
+            background-color: var(--valencia);
+            color: var(--light-1);
+
+            &:hover {
+              background-color: var(--accent-1);
+              color: var(--light-1);
+            }
+          }
+        }
+      }
+
+      .copyright {
+        small {
+          color: var(--valencia);
+        }
+
+        a:hover {
+          color: var(--accent-1);
+        }
+      }
+    }
+
+    #top {
+      background-color: var(--valencia);
+      color: var(--light-1);
+    }
+
+    #content {
+      a {
+        &:hover {
+          color: var(--accent-1);
+        }
+      }
+    }
+  }
+
+  &.tapestry {
+    #main {
+      background-color: var(--tapestry);
+
+      header {
+        .intro-text {
+          p,
+          span {
+            color: var(--light-1);
+          }
+        }
+
+        .heading {
+          color: var(--tapestry);
+        }
+      }
+    }
+
+    .section {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      span,
+      a,
+      cite,
+      blockquote,
+      ul,
+      li,
+      .article-list {
+        color: var(--light-1);
+      }
+
+      h2 {
+        &::before {
+          background-color: var(--light-1) !important;
+        }
+      }
+
+      .divider,
+      span,
+      cite {
+        &::before,
+        &::after {
+          background-color: var(--light-1) !important;
+        }
+      }
+    }
+
+    .card {
+      .text-wrapper {
+        background-color: var(--tapestry);
+      }
+    }
+
+    .big-type-message-section {
+      .big-type-message {
+        color: var(--dark-2);
+      }
+    }
+
+    #hero-background-color {
+      background-color: var(--tapestry);
+    }
+
+    .hero-title {
+      color: var(--light-1);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--light-1);
+
+      &:hover {
+        background-color: var(--dark-3);
+      }
+    }
+
+    footer#footer {
+      background: var(--tapestry);
+
+      h3 {
+        color: var(--light-1);
+      }
+
+      .grid {
+        color: var(--light-1);
+        p::after {
+          background-color: var(--light-1);
+        }
+      }
+
+      .contact-info {
+        .wrapper {
+          .container {
+            p {
+              color: var(--light-1);
+            }
+
+            a {
+              color: var(--light-1);
+
+              &:hover {
+                color: var(--accent-1);
+              }
+            }
+          }
+        }
+      }
+
+      .newsletter {
+        p {
+          color: var(--light-1);
+        }
+
+        label {
+          color: var(--light-1);
+        }
+
+        .wrapper {
+          input {
+            border-color: var(--tapestry) !important;
+            background-color: var(--light-1);
+
+            &::placeholder {
+              color: var(--dark-2);
+            }
+          }
+
+          button.btn {
+            border-color: var(--tapestry) !important;
+            background-color: var(--light-1);
+            color: var(--tapestry);
+
+            &:hover {
+              background-color: var(--accent-1);
+              color: var(--tapestry);
+            }
+          }
+        }
+      }
+
+      .copyright {
+        small {
+          color: var(--light-1);
+        }
+
+        a:hover {
+          color: var(--accent-1);
+        }
+      }
+
+      .svg-wrapper {
+        svg {
+          path {
+            fill: var(--light-1);
+          }
+          line {
+            stroke: var(--light-1);
+          }
+        }
+      }
+    }
+    #top {
+      background-color: var(--light-1);
+      color: var(--tapestry);
+    }
+
+    #content {
+      a {
+        &:hover {
+          color: var(--accent-1);
+        }
+      }
+    }
+  }
+
+  &.tapestry-light-1 {
+    header {
+      .intro-text {
+        p,
+        span {
+          color: var(--tapestry);
+        }
+      }
+    }
+
+    #main {
+      background-color: var(--light-1);
+    }
+
+    .section {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      span,
+      a,
+      cite,
+      .article-list {
+        color: var(--tapestry);
+      }
+
+      h2 {
+        &::before {
+          background-color: var(--tapestry) !important;
+        }
+      }
+
+      .divider,
+      span,
+      cite {
+        &::before,
+        &::after {
+          background-color: var(--tapestry) !important;
+        }
+      }
+    }
+
+    .svg-wrapper.theme-color {
+      * {
+        fill: var(--tapestry);
+        stroke: var(--tapestry);
+      }
+    }
+
+    .big-type-message-section {
+      .big-type-message {
+        color: var(--light-3);
+      }
+    }
+
+    .card {
+      .text-wrapper {
+        background-color: var(--light-1);
+      }
+    }
+
+    #hero-background-color {
+      background-color: var(--light-1);
+    }
+
+    .hero-title {
+      color: var(--tapestry);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--tapestry);
+
+      &:hover {
+        background-color: var(--dark-3);
+      }
+    }
+
+    footer#footer {
+      background: var(--light-1);
+
+      h3 {
+        color: var(--tapestry);
+      }
+
+      .grid {
+        color: var(--tapestry);
+        p::after {
+          background-color: var(--tapestry);
+        }
+      }
+
+      .contact-info {
+        .wrapper {
+          .container {
+            p {
+              color: var(--tapestry);
+            }
+
+            a {
+              color: var(--tapestry);
+
+              &:hover {
+                color: var(--accent-1);
+              }
+            }
+          }
+        }
+      }
+
+      .newsletter {
+        p {
+          color: var(--tapestry);
+        }
+
+        label {
+          color: var(--tapestry);
+        }
+
+        .wrapper {
+          input {
+            border-color: var(--light-1);
+            background-color: var(--tapestry);
+
+            &::placeholder {
+              color: var(--light-3);
+            }
+          }
+
+          button.btn {
+            border-color: var(--light-1);
+            background-color: var(--tapestry);
+            color: var(--light-1);
+
+            &:hover {
+              background-color: var(--accent-1);
+              color: var(--light-1);
+            }
+          }
+        }
+      }
+
+      .copyright {
+        small {
+          color: var(--tapestry);
+        }
+
+        a:hover {
+          color: var(--accent-1);
+        }
+      }
+    }
+
+    #top {
+      background-color: var(--tapestry);
+      color: var(--light-1);
+    }
+
+    #content {
+      a {
+        &:hover {
+          color: var(--accent-1);
+        }
+      }
+    }
+  }
+
+  &.matisse {
+    #main {
+      background-color: var(--matisse);
+
+      header {
+        .intro-text {
+          p,
+          span {
+            color: var(--light-1);
+          }
+        }
+
+        .heading {
+          color: var(--matisse);
+        }
+      }
+    }
+
+    .section {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      span,
+      a,
+      cite,
+      blockquote,
+      ul,
+      li,
+      .article-list {
+        color: var(--light-1);
+      }
+
+      h2 {
+        &::before {
+          background-color: var(--light-1) !important;
+        }
+      }
+
+      .divider,
+      span,
+      cite {
+        &::before,
+        &::after {
+          background-color: var(--light-1) !important;
+        }
+      }
+    }
+
+    .card {
+      .text-wrapper {
+        background-color: var(--matisse);
+      }
+    }
+
+    .big-type-message-section {
+      .big-type-message {
+        color: var(--dark-2);
+      }
+    }
+
+    #hero-background-color {
+      background-color: var(--matisse);
+    }
+
+    .hero-title {
+      color: var(--light-1);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--light-1);
+
+      &:hover {
+        background-color: var(--dark-3);
+      }
+    }
+
+    footer#footer {
+      background: var(--matisse);
+
+      h3 {
+        color: var(--light-1);
+      }
+
+      .grid {
+        color: var(--light-1);
+        p::after {
+          background-color: var(--light-1);
+        }
+      }
+
+      .contact-info {
+        .wrapper {
+          .container {
+            p {
+              color: var(--light-1);
+            }
+
+            a {
+              color: var(--light-1);
+
+              &:hover {
+                color: var(--accent-1);
+              }
+            }
+          }
+        }
+      }
+
+      .newsletter {
+        p {
+          color: var(--light-1);
+        }
+
+        label {
+          color: var(--light-1);
+        }
+
+        .wrapper {
+          input {
+            border-color: var(--matisse) !important;
+            background-color: var(--light-1);
+
+            &::placeholder {
+              color: var(--dark-2);
+            }
+          }
+
+          button.btn {
+            border-color: var(--matisse) !important;
+            background-color: var(--light-1);
+            color: var(--matisse);
+
+            &:hover {
+              background-color: var(--accent-1);
+              color: var(--matisse);
+            }
+          }
+        }
+      }
+
+      .copyright {
+        small {
+          color: var(--light-1);
+        }
+
+        a:hover {
+          color: var(--accent-1);
+        }
+      }
+
+      .svg-wrapper {
+        svg {
+          path {
+            fill: var(--light-1);
+          }
+          line {
+            stroke: var(--light-1);
+          }
+        }
+      }
+    }
+    #top {
+      background-color: var(--light-1);
+      color: var(--matisse);
+    }
+
+    #content {
+      a {
+        &:hover {
+          color: var(--accent-1);
+        }
+      }
+    }
+  }
+
+  &.matisse-light-1 {
+    header {
+      .intro-text {
+        p,
+        span {
+          color: var(--matisse);
+        }
+      }
+    }
+
+    #main {
+      background-color: var(--light-1);
+    }
+
+    .section {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      span,
+      a,
+      cite,
+      .article-list {
+        color: var(--matisse);
+      }
+
+      h2 {
+        &::before {
+          background-color: var(--matisse) !important;
+        }
+      }
+
+      .divider,
+      span,
+      cite {
+        &::before,
+        &::after {
+          background-color: var(--matisse) !important;
+        }
+      }
+    }
+
+    .svg-wrapper.theme-color {
+      * {
+        fill: var(--matisse);
+        stroke: var(--matisse);
+      }
+    }
+
+    .big-type-message-section {
+      .big-type-message {
+        color: var(--light-3);
+      }
+    }
+
+    .card {
+      .text-wrapper {
+        background-color: var(--light-1);
+      }
+    }
+
+    #hero-background-color {
+      background-color: var(--light-1);
+    }
+
+    .hero-title {
+      color: var(--matisse);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--matisse);
+
+      &:hover {
+        background-color: var(--dark-3);
+      }
+    }
+
+    footer#footer {
+      background: var(--light-1);
+
+      h3 {
+        color: var(--matisse);
+      }
+
+      .grid {
+        color: var(--matisse);
+        p::after {
+          background-color: var(--matisse);
+        }
+      }
+
+      .contact-info {
+        .wrapper {
+          .container {
+            p {
+              color: var(--matisse);
+            }
+
+            a {
+              color: var(--matisse);
+
+              &:hover {
+                color: var(--accent-1);
+              }
+            }
+          }
+        }
+      }
+
+      .newsletter {
+        p {
+          color: var(--matisse);
+        }
+
+        label {
+          color: var(--matisse);
+        }
+
+        .wrapper {
+          input {
+            border-color: var(--light-1);
+            background-color: var(--matisse);
+
+            &::placeholder {
+              color: var(--light-3);
+            }
+          }
+
+          button.btn {
+            border-color: var(--light-1);
+            background-color: var(--matisse);
+            color: var(--light-1);
+
+            &:hover {
+              background-color: var(--accent-1);
+              color: var(--light-1);
+            }
+          }
+        }
+      }
+
+      .copyright {
+        small {
+          color: var(--matisse);
+        }
+
+        a:hover {
+          color: var(--accent-1);
+        }
+      }
+    }
+
+    #top {
+      background-color: var(--matisse);
+      color: var(--light-1);
+    }
+
+    #content {
+      a {
+        &:hover {
+          color: var(--accent-1);
+        }
+      }
+    }
   }
 }
 
@@ -118,12 +1542,10 @@ body {
 
 #main-header {
   &.dark-1 {
-    background-color: var(--dark-1);
-
     #site-logo-wrapper {
       border-color: transparent;
 
-      &:not(.no-accent):hover {
+      &:hover {
         background: var(--accent-1);
         #site-logo {
           background-color: var(--accent-1);
@@ -138,6 +1560,11 @@ body {
         &.transparent {
           border-color: var(--dark-1);
           background-color: transparent;
+
+          &:hover {
+            border-color: var(--accent-1);
+          }
+
           path {
             fill: var(--dark-1);
           }
@@ -149,13 +1576,12 @@ body {
       }
     }
   }
-  &.light-1 {
-    background-color: var(--light-1);
 
+  &.light-1 {
     #site-logo-wrapper {
       border-color: transparent;
 
-      &:not(.no-accent):hover {
+      &:hover {
         background: var(--accent-1);
         #site-logo {
           border-color: var(--accent-1);
@@ -171,6 +1597,10 @@ body {
           background-color: transparent;
           border-color: var(--light-1);
 
+          &:hover {
+            border-color: var(--accent-1);
+          }
+
           path {
             fill: var(--light-1);
           }
@@ -178,6 +1608,150 @@ body {
 
         path {
           fill: var(--dark-1);
+        }
+      }
+    }
+  }
+
+  &.accent-1 {
+    #site-logo-wrapper {
+      border-color: transparent;
+
+      &:hover {
+        background: var(--dark-1);
+        #site-logo {
+          border-color: var(--dark-1);
+          background-color: var(--dark-1);
+        }
+      }
+
+      #site-logo {
+        border-color: transparent;
+        background-color: var(--dark-1);
+
+        &.transparent {
+          background-color: transparent;
+          border-color: var(--dark-1);
+
+          &:hover {
+            border-color: var(--accent-1);
+          }
+
+          path {
+            fill: var(--dark-1);
+          }
+        }
+
+        path {
+          fill: var(--light-1);
+        }
+      }
+    }
+  }
+
+  &.valencia {
+    #site-logo-wrapper {
+      border-color: transparent;
+
+      &:hover {
+        background: var(--accent-1);
+        #site-logo {
+          background-color: var(--accent-1);
+          border-color: var(--accent-1);
+        }
+      }
+
+      #site-logo {
+        border-color: transparent;
+        background-color: var(--valencia);
+
+        &.transparent {
+          border-color: var(--valencia);
+          background-color: transparent;
+
+          &:hover {
+            border-color: var(--accent-1);
+          }
+
+          path {
+            fill: var(--valencia);
+          }
+        }
+
+        path {
+          fill: var(--light-1);
+        }
+      }
+    }
+  }
+
+  &.tapestry {
+    #site-logo-wrapper {
+      border-color: transparent;
+
+      &:hover {
+        background: var(--accent-1);
+        #site-logo {
+          background-color: var(--accent-1);
+          border-color: var(--accent-1);
+        }
+      }
+
+      #site-logo {
+        border-color: transparent;
+        background-color: var(--tapestry);
+
+        &.transparent {
+          border-color: var(--tapestry);
+          background-color: transparent;
+
+          &:hover {
+            border-color: var(--accent-1);
+          }
+
+          path {
+            fill: var(--tapestry);
+          }
+        }
+
+        path {
+          fill: var(--light-1);
+        }
+      }
+    }
+  }
+
+  &.matisse {
+    #site-logo-wrapper {
+      border-color: transparent;
+
+      &:hover {
+        background: var(--accent-1);
+        #site-logo {
+          background-color: var(--accent-1);
+          border-color: var(--accent-1);
+        }
+      }
+
+      #site-logo {
+        border-color: transparent;
+        background-color: var(--matisse);
+
+        &.transparent {
+          border-color: var(--matisse);
+          background-color: transparent;
+
+          &:hover {
+            border-color: var(--accent-1);
+          }
+
+          path {
+            fill: var(--matisse);
+          }
+        }
+
+        path {
+          fill: var(--light-1);
         }
       }
     }
@@ -200,6 +1774,7 @@ body {
       }
     }
   }
+
   &.light-1 {
     #main-nav {
       li.menu-item * {
@@ -210,6 +1785,73 @@ body {
       svg {
         path {
           fill: var(--light-1);
+        }
+      }
+    }
+  }
+
+  &.accent-1 {
+    #main-nav {
+      li.menu-item * {
+        color: var(--dark-1);
+      }
+    }
+    #burger-open {
+      &:hover {
+        svg {
+          path {
+            fill: var(--dark-1);
+          }
+        }
+      }
+      svg {
+        path {
+          fill: var(--dark-1);
+        }
+      }
+    }
+  }
+
+  &.valencia {
+    #main-nav {
+      li.menu-item * {
+        color: var(--valencia);
+      }
+    }
+    #burger-open {
+      svg {
+        path {
+          fill: var(--valencia);
+        }
+      }
+    }
+  }
+
+  &.tapestry {
+    #main-nav {
+      li.menu-item * {
+        color: var(--tapestry);
+      }
+    }
+    #burger-open {
+      svg {
+        path {
+          fill: var(--tapestry);
+        }
+      }
+    }
+  }
+
+  &.maltisse {
+    #main-nav {
+      li.menu-item * {
+        color: var(--matisse);
+      }
+    }
+    #burger-open {
+      svg {
+        path {
+          fill: var(--matisse);
         }
       }
     }

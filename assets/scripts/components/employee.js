@@ -9,7 +9,7 @@ export default class Employee {
    * @param {String} id
    * @memberof Page
    */
-  constructor(firstName, lastName, featuredImage, workTitle, phone, email) {
+  constructor(firstName, lastName, featuredImage, workTitle, workField, phone, email, link) {
     // guid generation
     Object.defineProperty(this, 'id', {
       // ikke-rfc compliant (...men godt nok til vores scope)
@@ -25,8 +25,10 @@ export default class Employee {
     this._lastName = lastName || ''
     this._featuredImage = featuredImage || ''
     this._workTitle = workTitle || ''
+    this._workField = workField || []
     this._phone = phone || ''
     this._email = email || ''
+    this._link = link || ''
   }
 
   get firstName() {
@@ -61,6 +63,14 @@ export default class Employee {
     if (this._workTitle !== x) this._workTitle = x
   }
 
+  get workField() {
+    return this._workField
+  }
+
+  set workField(x) {
+    if (this._workField !== x) this._workField = x
+  }
+
   get phone() {
     return this._phone
   }
@@ -75,5 +85,13 @@ export default class Employee {
 
   set email(x) {
     if (this._email !== x) this._email = x
+  }
+
+  get link() {
+    return this._link
+  }
+
+  set link(x) {
+    if (this._link !== x) this._link = x
   }
 }

@@ -24,17 +24,27 @@ export default class AboutPage extends Page {
     EventListenerService.onClickBurgerOpen()
     EventListenerService.onClickTop()
     EventListenerService.bindOnClick()
-    ObserverService.observeHero()
-    ObserverService.observeFooter()
+    EventListenerService.toggleSiteLogoThemeColors(['dark-1', 'light-1'])
+    ObserverService.observeHero(['dark-1', 'light-1'])
     ObserverService.observe(
       '#people-section',
       false,
       null,
       1,
-      '300px 0px -900px 0px',
+      '500px 0px -600px 0px',
       ['light-1', 'dark-1'],
-      ['light-1', 'dark-1'],
+      ['dark-1', 'light-1'],
       ['dark-1', 'light-1']
+    )
+    ObserverService.observe(
+      '#footer',
+      false,
+      null,
+      0,
+      '500px 0px -500px 0px',
+      ['accent-1', 'light-1'],
+      ['accent-1', 'dark-1'],
+      ['accent-1', 'dark-1']
     )
   }
 }

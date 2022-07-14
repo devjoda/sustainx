@@ -5,4 +5,176 @@
 @use '../01_abstracts/index' as *;
 
 #jobs.page {
+  #main {
+    h2::before {
+      background-color: var(--jobs);
+    }
+
+    header {
+      .hero-image-wrapper {
+        #hero-image {
+          background-color: var(--jobs);
+          background-image: none;
+
+          @include mq(lg) {
+            background-image: url('../../../images/hero/jobs/hero-jobs-1920w.jpg');
+            opacity: 0.95;
+          }
+        }
+      }
+
+      .intro-text {
+        .inner {
+          p {
+            color: var(--dark-1);
+
+            @include mq(lg) {
+              color: var(--light-1);
+            }
+          }
+
+          span.breadcrumb {
+            color: var(--dark-1);
+
+            @include mq(lg) {
+              color: var(--light-1);
+            }
+
+            &::after {
+              left: 4.5rem;
+              background-color: var(--dark-1);
+
+              @include mq(lg) {
+                background-color: var(--jobs);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #intro-section {
+      .body {
+        margin-top: clamp(30px, 5vw, 60px);
+      }
+    }
+
+    #life-at-sustainx-section {
+      .svg-wrapper {
+        margin-top: clamp(100px, 15vw, 200px);
+        pointer-events: none;
+
+        svg {
+          max-width: 600px;
+
+          @include mq(xl) {
+            max-width: unset;
+          }
+        }
+      }
+
+      .testimonial-wrapper {
+        .kicker {
+          &::after {
+            @include divider;
+            background-color: var(--jobs);
+            left: 14em;
+          }
+        }
+      }
+    }
+
+    #perks-section {
+      .grid.perks {
+        margin-top: clamp(100px, 15vw, 200px);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        @include mq(md) {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, 250px);
+          gap: 6.25rem;
+          list-style: none;
+          padding: 0;
+        }
+
+        @include mq(qhd) {
+          gap: 10.3rem;
+          grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+        }
+
+        .svg-wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          width: 300px;
+
+          @include mq(md) {
+            width: 100%;
+          }
+
+          svg {
+            width: 200px;
+
+            @include mq(md) {
+              width: 100%;
+            }
+          }
+
+          &:nth-child(odd) {
+            align-self: flex-start;
+
+            @include mq(md) {
+              align-self: unset;
+            }
+          }
+          &:nth-child(even) {
+            align-self: flex-end;
+
+            @include mq(md) {
+              align-self: unset;
+            }
+          }
+        }
+      }
+
+      > p:last-child {
+        margin-top: var(--section-padding);
+        color: var(--jobs);
+        font-family: var(--font-1);
+        font-style: normal;
+        font-weight: 700;
+        font-size: clamp(1.75rem, 5vw, 2.9rem);
+        line-height: 1;
+        letter-spacing: -0.2rem;
+      }
+    }
+
+    #apply-section {
+      h3 {
+        margin-top: var(--section-padding);
+        font-family: var(--font-1);
+        font-style: normal;
+        font-weight: 700;
+        font-size: clamp(2rem, 5vw, 6rem);
+        line-height: 1;
+        letter-spacing: -0.05rem;
+
+        @include mq(xl) {
+          letter-spacing: -0.25rem;
+        }
+      }
+
+      .job-opportunities-wrapper {
+        margin-top: clamp(100px, 15vw, 200px);
+        display: grid;
+      }
+    }
+
+    #unsolicited-applications-section {
+      margin-bottom: clamp(100px, 15vw, 200px);
+    }
+  }
 }

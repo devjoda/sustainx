@@ -1,0 +1,116 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the news page.
+// -----------------------------------------------------------------------------
+
+@use '../01_abstracts/index' as *;
+
+#news.page {
+  #main {
+    .intro-text {
+      span.breadcrumb {
+        &::after {
+          left: 73px;
+        }
+      }
+    }
+  }
+
+  .hero-title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-family: var(--font-1);
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(1.125rem, 7vw, 8.75rem);
+    line-height: 1.4;
+    letter-spacing: -0.05em;
+    margin: 0 var(--section-margin) 0;
+
+    @include mq(md) {
+      line-height: 1.3;
+    }
+
+    @include mq(lg) {
+      line-height: 1.2;
+    }
+
+    @include mq(xl) {
+      line-height: 1.1;
+    }
+
+    @include mq(xxl) {
+      line-height: 1;
+    }
+
+    &::after {
+      content: '.';
+    }
+  }
+
+  .full {
+    margin-top: var(--section-margin);
+  }
+
+  #content {
+    header {
+      display: flex;
+      flex-wrap: wrap;
+
+      > div {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+      }
+
+      p,
+      a {
+        margin: 0;
+        font-family: var(--font-1);
+        font-style: normal;
+        font-weight: 700;
+        font-size: clamp(0.875rem, 5vw, 1.125rem);
+        letter-spacing: -0.05rem;
+      }
+
+      .divider {
+        display: block;
+        width: 50px;
+        position: relative;
+        @media only screen and (min-width: 583px) {
+          margin-right: 2rem;
+        }
+
+        &::after {
+          @include divider;
+          position: absolute;
+          width: 50px;
+          top: 30%;
+        }
+      }
+    }
+
+    .grid {
+      margin-top: clamp(100px, 15vw, 150px);
+      .employee {
+        margin-top: 4rem;
+        .employee-image-wrapper {
+          display: flex;
+          img {
+            margin-top: 2rem;
+            width: 200px;
+
+            @include mq(lg) {
+              width: 250px;
+            }
+
+            @include mq(qhd) {
+              margin-top: 4rem;
+              width: 300px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,7 +5,21 @@ import ServicesPage from '../components/pages/services-page.js'
 import WorkPage from '../components/pages/work-page.js'
 import AboutPage from '../components/pages/about-page.js'
 import PeoplePage from '../components/pages/people-page.js'
+import JobsPage from '../components/pages/jobs-page.js'
+import ContactPage from '../components/pages/contact-page.js'
+import DistilledPage from '../components/pages/distilled-page.js'
+import NewsPage from '../components/pages/news-page.js'
+import InsightsPage from '../components/pages/insights-page.js'
+import JobOpportunitiesPage from '../components/pages/job-opportunities-page.js'
+import EmployeesPage from '../components/pages/employees-page.js'
+import SustainabilityManagementPage from '../components/pages/sustainability-management-page.js'
+import SustainabilityNetworksPage from '../components/pages/sustainability-networks-page.js'
+import SustainabilityEducationPage from '../components/pages/sustainability-education-page.js'
+import NetworksPage from '../components/pages/networks-page.js'
+import CaseStudyPage from '../components/pages/case-study-page.js'
+import DefaultPage from '../components/pages/default-page.js'
 import Employee from '../components/employee.js'
+import JobOpportunity from '../components/job-opportunity.js'
 import Swiper from '../vendors/swiper-bundle.min.js'
 
 /**
@@ -23,8 +37,8 @@ export default class CrudService {
    * @memberof CrudService
    */
   static createPage() {
-    const pathname = this.readPage()
     let newPage
+    const pathname = this.readPage()
     switch (pathname) {
       case 'home':
         newPage = new HomePage('home', 'dark-1', 'light-1', 'light-1')
@@ -36,16 +50,62 @@ export default class CrudService {
         newPage = new WorkPage('work', 'light-1', 'dark-1', 'dark-1')
         break
       case 'about':
-        newPage = new AboutPage('about', 'dark-1', 'light-1', 'light-1')
+        newPage = new AboutPage('about', 'dark-1', 'light-1', 'dark-1')
         break
       case 'people':
         newPage = new PeoplePage('people', 'light-1', 'dark-1', 'dark-1')
         break
+      case 'jobs':
+        newPage = new JobsPage('jobs', 'dark-1', 'light-1', 'dark-1')
+        break
+      case 'contact':
+        newPage = new ContactPage('contact', 'dark-1', 'light-1', 'light-1')
+        break
+      case 'distilled':
+        newPage = new DistilledPage('distilled', 'dark-1', 'light-1', 'light-1')
+        break
       default:
-        return false
+        const locationPathname = location.pathname
+        // news
+        if (locationPathname.substring(1, 5).localeCompare('news', 'en', { sensitivity: 'base' }) === 0) {
+          newPage = new NewsPage('news', 'light-1', 'dark-1', 'dark-1')
+          // insights
+        } else if (locationPathname.substring(1, 9).localeCompare('insights', 'en', { sensitivity: 'base' }) === 0) {
+          newPage = new InsightsPage('insights', 'light-1', 'dark-1', 'dark-1')
+        } // job-opportunities
+        else if (locationPathname.substring(1, 18).localeCompare('job-opportunities', 'en', { sensitivity: 'base' }) === 0) {
+          newPage = new JobOpportunitiesPage('job-opportunities', 'dark-1', 'light-1', 'light-1')
+        } // employees
+        else if (locationPathname.substring(1, 10).localeCompare('employees', 'en', { sensitivity: 'base' }) === 0) {
+          newPage = new EmployeesPage('employees', 'dark-1', 'light-1', 'light-1')
+        } // services
+        else if (locationPathname.substring(1, 9).localeCompare('services', 'en', { sensitivity: 'base' }) === 0) {
+          if (locationPathname.substring(25, 35).localeCompare('management', 'en', { sensitivity: 'base' }) === 0) {
+            newPage = new SustainabilityManagementPage('sustainability-management', 'light-1', 'dark-1', 'light-1')
+          } else if (locationPathname.substring(25, 33).localeCompare('networks', 'en', { sensitivity: 'base' }) === 0) {
+            newPage = new SustainabilityNetworksPage('sustainability-networks', 'dark-1', 'light-1', 'light-1')
+          } else if (locationPathname.substring(25, 34).localeCompare('education', 'en', { sensitivity: 'base' }) === 0) {
+            newPage = new SustainabilityEducationPage('sustainability-education', 'light-1', 'dark-1', 'dark-1')
+          }
+        } // networks
+        else if (locationPathname.substring(1, 9).localeCompare('networks', 'en', { sensitivity: 'base' }) === 0) {
+          newPage = new NetworksPage('networks', 'light-1', 'dark-1', 'dark-1')
+        } // case studies
+        else if (locationPathname.substring(1, 5).localeCompare('work', 'en', { sensitivity: 'base' }) === 0) {
+          if (locationPathname.substring(6, 19).localeCompare('case-study-01', 'en', { sensitivity: 'base' }) === 0) {
+            newPage = new CaseStudyPage('case-study-01', 'valencia', 'light-1', 'light-1')
+          } else if (locationPathname.substring(6, 19).localeCompare('case-study-02', 'en', { sensitivity: 'base' }) === 0) {
+            newPage = new CaseStudyPage('case-study-02', 'matisse', 'light-1', 'light-1')
+          } else if (locationPathname.substring(6, 19).localeCompare('case-study-03', 'en', { sensitivity: 'base' }) === 0) {
+            newPage = new CaseStudyPage('case-study-03', 'tapestry', 'light-1', 'light-1')
+          } else {
+            newPage = new CaseStudyPage('case-study-default', 'dark', 'light-1', 'light-1')
+          }
+        } else {
+          newPage = new DefaultPage('default', 'dark-1', 'light-1', 'light-1')
+        }
     }
     StorageService.page = newPage
-    VerboseService.print(`Page created [${pathname}]`)
     return newPage
   }
 
@@ -57,15 +117,8 @@ export default class CrudService {
    * @memberof CrudService
    */
   static readPage() {
-    // Få fat i stinavn og formatér det
     let currentPathname = location.pathname.substring(10, location.pathname.length).replace('.html', '')
-    // Check om stinavn findes i storage-service
-    const page = StorageService.pathnames[currentPathname]
-    VerboseService.print(`Found page file path [${page}]`)
-    if (page) {
-      return page
-    }
-    return false
+    return StorageService.pathnames[currentPathname]
   }
 
   /**
@@ -168,9 +221,274 @@ export default class CrudService {
     return newObserver
   }
 
-  static createEmployee(firstName, lastName, featuredImage, workTitle, phone, email) {
-    const employee = new Employee(firstName, lastName, featuredImage, workTitle, phone, email)
+  static createJobOpportunity(position, link) {
+    const jobOpportunity = new JobOpportunity(position, link)
+    StorageService.jobOpportunities.add(jobOpportunity)
+  }
+
+  static createAllJobOpportunities() {
+    this.createJobOpportunity('Marketing Lead', '/job-opportunities/marketing-lead.html')
+    this.createJobOpportunity('Project Manager', '/job-opportunities/project-manager.html')
+    this.createJobOpportunity('Student Content Writer', '/job-opportunities/student-content-writer.html')
+  }
+
+  static createEmployee(firstName, lastName, featuredImage, workTitle, workField, phone, email, link) {
+    const employee = new Employee(firstName, lastName, featuredImage, workTitle, workField, phone, email, link)
     StorageService.employees.add(employee)
+  }
+
+  static createAllEmployees() {
+    this.createEmployee(
+      'Line Amtorp',
+      'Poulsen',
+      '../assets/images/employees/employee-01-320w.png',
+      'Founder & Head of Sustainability',
+      ['Administration', 'Sustainability'],
+      '+ 45 20 11 68 28',
+      'lap@sustainx.dk',
+      '/people/line-amtorp-poulsen.html'
+    )
+    this.createEmployee(
+      'Kristian',
+      'Danielsen',
+      '../assets/images/employees/employee-02-320w.png',
+      'Founder & Head of Project Management',
+      ['Administration', 'Project Management'],
+      '+45 42 17 48 76',
+      'kda@sustainx.dk',
+      '/people/kristian-danielsen.html'
+    )
+    this.createEmployee(
+      'Adis',
+      'Suhonjic',
+      '../assets/images/employees/employee-03-320w.png',
+      'Chief Operating Officer',
+      ['Administration'],
+      '+45 26 81 48 00',
+      'ads@sustainx.dk',
+      '/people/adis-suhonjic.html'
+    )
+    this.createEmployee(
+      'Mie',
+      'Skjodt',
+      '../assets/images/employees/employee-04-320w.png',
+      'Department Manager',
+      ['Administration', 'Sustainability', 'SustainX Academy'],
+      '+45 21 72 66 67',
+      'mss@sustainx.dk',
+      '/people/mie-skjodt.html'
+    )
+    this.createEmployee(
+      'Maria',
+      'Kravchenko',
+      '../assets/images/employees/employee-05-320w.png',
+      'Sustainability Consultant, PhD',
+      ['Sustainability'],
+      '+45 22 25 34 22',
+      'mkr@sustainx.dk',
+      '/people/maria-kravchenko.html'
+    )
+    this.createEmployee(
+      'Christian',
+      'Sparre',
+      '../assets/images/employees/employee-06-320w.png',
+      'Sustainability Consultant',
+      ['Sustainability'],
+      '+45 23 88 18 11',
+      'cas@sustainx.dk',
+      '/people/christian-sparre.html'
+    )
+    this.createEmployee(
+      'Tenna Viid',
+      'Jørgensen',
+      '../assets/images/employees/employee-07.svg',
+      'People & Culture Lead',
+      ['Administration'],
+      '+45 23 88 18 11',
+      'tvj@sustainx.dk',
+      '/people/tenna-viid-joergensen.html'
+    )
+    this.createEmployee(
+      'Anne-Sofie',
+      'Petersen',
+      '../assets/images/employees/employee-08-320w.png',
+      'Sustainability Consultant',
+      ['Sustainability'],
+      '+47 90 01 12 05',
+      'asp@sustainx.dk',
+      '/people/anna-sofie-petersen.html'
+    )
+    this.createEmployee(
+      'Niels',
+      'Jahn',
+      '../assets/images/employees/employee-09-320w.png',
+      'Sustainability Consultant',
+      ['Sustainability'],
+      '+45 60 52 42 98',
+      'nja@sustainx.dk',
+      '/people/niels-jahn.html'
+    )
+    this.createEmployee(
+      'Tobias S.',
+      'Foght',
+      '../assets/images/employees/employee-10-320w.png',
+      'Sustainability Network Coordinator',
+      ['Sustainability'],
+      '+45 53 70 25 35',
+      'tfo@sustainx.dk',
+      '/people/tobias-s-foght.html'
+    )
+    this.createEmployee(
+      'Kristoffer',
+      'Nielsen',
+      '../assets/images/employees/employee-11-320w.png',
+      'Sustainability Project Manager',
+      ['Project Management', 'Sustainability'],
+      '+45 23 88 18 11',
+      'krn@sustainx.dk',
+      '/people/kristoffer-nielsen.html'
+    )
+    this.createEmployee(
+      'Josefine D.',
+      'Berthelsen',
+      '../assets/images/employees/employee-12-320w.png',
+      'PR & Communications Coordinator',
+      ['Administration'],
+      '+45 43 28 14 11',
+      'jdb@sustainx.dk',
+      '/people/josefine-d-berthelsen.html'
+    )
+    this.createEmployee(
+      'Anton',
+      'Kvist',
+      '../assets/images/employees/employee-13.svg',
+      'Technical Project Manager',
+      ['Project Management'],
+      '+47 90 01 12 05',
+      'ank@sustainx.dk',
+      '/people/anton-kvist.html'
+    )
+    this.createEmployee(
+      'Arvin',
+      'Fard',
+      '../assets/images/employees/employee-14.svg',
+      'Academy Intern',
+      ['SustainX Academy'],
+      '+45 60 52 42 98',
+      'arf@sustainx.dk',
+      '/people/arvin-fard.html'
+    )
+    this.createEmployee(
+      'Jens',
+      'Kruse',
+      '../assets/images/employees/employee-15.svg',
+      'Sustainability Manager & Consultant',
+      ['Sustainability'],
+      '+45 53 70 25 35',
+      'jek@sustainx.dk',
+      '/people/jens-kruse.html'
+    )
+    this.createEmployee(
+      'Line L.',
+      'Rasmussen',
+      '../assets/images/employees/employee-16-320w.png',
+      'Sustainability Project Manager',
+      ['Sustainability', 'Project Management'],
+      '+45 22 29 21 40',
+      'llr@sustainx.dk',
+      '/people/line-l-rasmussen.html'
+    )
+    this.createEmployee(
+      'Anna',
+      'Malinkowska',
+      '../assets/images/employees/employee-17-320w.png',
+      'Sustainability Consultant',
+      ['Sustainability'],
+      '+45 31 23 11 07',
+      'anm@sustainx.dk',
+      '/people/anna-malinkowska.html'
+    )
+    this.createEmployee(
+      'Peter K.',
+      'Krogh',
+      '../assets/images/employees/employee-18.svg',
+      'Sustainability Graduate',
+      ['SustainX Academy'],
+      '+47 90 01 12 05',
+      'pek@sustainx.dk',
+      '/people/peter-k-krogh.html'
+    )
+    this.createEmployee(
+      'Amalie',
+      'Bastrup-Birk',
+      '../assets/images/employees/employee-19-320w.png',
+      'Sustainability Manager',
+      ['Sustainability'],
+      '+45 23 95 15 29',
+      'abw@sustainx.dk',
+      '/people/amalie-bastrup-birk.html'
+    )
+    this.createEmployee(
+      'Anne-Freja',
+      'Amsinck',
+      '../assets/images/employees/employee-20-320w.png',
+      'Sustainability Manager',
+      ['Sustainability'],
+      '+45 26 77 74 78',
+      'afa@sustainx.dk',
+      '/people/anne-freja-amsinck.html'
+    )
+    this.createEmployee(
+      'Georgiana',
+      'Apetroaei',
+      '../assets/images/employees/employee-21.svg',
+      'Sustainability Coordinator',
+      ['Sustainability'],
+      '+45 22 81 93 21',
+      'gea@sustainx.dk',
+      '/people/georgiana-apetroaei.html'
+    )
+    this.createEmployee(
+      'Dana',
+      'Ansberga',
+      '../assets/images/employees/employee-22-320w.png',
+      'Technical Project Manager',
+      ['Project Management'],
+      '+45 52 82 93 41',
+      'daa@sustainx.dk',
+      '/people/dana-ansberga.html'
+    )
+    this.createEmployee(
+      'Chantal',
+      'Beck',
+      '../assets/images/employees/employee-23-320w.png',
+      'Academy Associate',
+      ['SustainX Academy'],
+      '+45 51 32 93 41',
+      'cbe@sustainx.dk',
+      '/people/chantal-beck.html'
+    )
+    this.createEmployee(
+      'Sami',
+      'El-Daoud',
+      '../assets/images/employees/employee-24-320w.png',
+      'Technical Project Manager',
+      ['Project Management'],
+      '+45 31 31 93 41',
+      'swe@sustainx.dk',
+      '/people/sami-el-daoud.html'
+    )
+    this.createEmployee(
+      'Maja D.',
+      'Pøhler',
+      '../assets/images/employees/employee-25-320w.png',
+      'Academy Associate',
+      ['SustainX Academy'],
+      '+45 21 51 41 61',
+      'mdp@sustainx.dk',
+      '/people/maja-d-poehler.html'
+    )
+    VerboseService.print('Created employees [25]')
   }
 
   static createSwiper() {
@@ -195,194 +513,5 @@ export default class CrudService {
       },
     })
     StorageService.swipers.add(swiper)
-  }
-
-  static createAllEmployees() {
-    const employee1 = this.createEmployee(
-      'Line Amtorp',
-      'Poulsen',
-      '/assets/images/employees/employee-01-320w.png',
-      'Founder & Head of Sustainability',
-      '+ 45 20 11 68 28',
-      'lap@sustainx.dk'
-    )
-    const employee2 = this.createEmployee(
-      'Kristian',
-      'Danielsen',
-      '/assets/images/employees/employee-02-320w.png',
-      'Founder & Head of Project Management',
-      '+45 42 17 48 76',
-      'kda@sustainx.dk'
-    )
-    const employee3 = this.createEmployee(
-      'Adis',
-      'Suhonjic',
-      '/assets/images/employees/employee-03-320w.png',
-      'Chief Operating Officer',
-      '+45 26 81 48 00',
-      'ads@sustainx.dk'
-    )
-    const employee4 = this.createEmployee(
-      'Mie',
-      'Skjodt',
-      '/assets/images/employees/employee-04-320w.png',
-      'Department Manager',
-      '+45 21 72 66 67',
-      'mss@sustainx.dk'
-    )
-    const employee5 = this.createEmployee(
-      'Mara',
-      'Kravchenko',
-      '/assets/images/employees/employee-05-320w.png',
-      'Sustainability Consultant, PhD',
-      '+45 22 25 34 22',
-      'mkr@sustainx.dk'
-    )
-    const employee6 = this.createEmployee(
-      'Christian',
-      'Sparre',
-      '/assets/images/employees/employee-06-320w.png',
-      'Sustainability Consultant',
-      '+45 23 88 18 11',
-      'cas@sustainx.dk'
-    )
-    const employee7 = this.createEmployee(
-      'Tenna Viid',
-      'Jørgensen',
-      '/assets/images/employees/employee-07.svg',
-      'People & Culture Lead',
-      '+45 23 88 18 11',
-      'tvj@sustainx.dk'
-    )
-    const employee8 = this.createEmployee(
-      'Anne-Sofie',
-      'Petersen',
-      '/assets/images/employees/employee-08-320w.png',
-      'Sustainability Consultant',
-      '+47 90 01 12 05',
-      'asp@sustainx.dk'
-    )
-    const employee9 = this.createEmployee(
-      'Niels',
-      'Jahn',
-      '/assets/images/employees/employee-09-320w.png',
-      'Sustainability Consultant',
-      '+45 60 52 42 98',
-      'nja@sustainx.dk',
-      'nja@sustainx.dk'
-    )
-    const employee10 = this.createEmployee(
-      'Tobias S.',
-      'Foght',
-      '/assets/images/employees/employee-10-320w.png',
-      'Sustainability Consultant',
-      '+45 53 70 25 35',
-      'tfo@sustainx.dk'
-    )
-    const employee11 = this.createEmployee(
-      'Kristoffer',
-      'Nielsen',
-      '/assets/images/employees/employee-11-320w.png',
-      'Sustainability Project Manager',
-      '+45 23 88 18 11',
-      'krn@sustainx.dk'
-    )
-    const employee12 = this.createEmployee(
-      'Josefine D.',
-      'Berthelsen',
-      '/assets/images/employees/employee-12-320w.png',
-      'PR & Communications Coordinator',
-      '+45 23 88 18 11',
-      'jdb@sustainx.dk'
-    )
-    const employee13 = this.createEmployee(
-      'Anton',
-      'Kvist',
-      '/assets/images/employees/employee-13.svg',
-      'Technical Project Manager',
-      '+47 90 01 12 05',
-      'ank@sustainx.dk'
-    )
-    const employee14 = this.createEmployee(
-      'Arvin',
-      'Fard',
-      '/assets/images/employees/employee-14.svg',
-      'Academy Intern',
-      '+45 60 52 42 98',
-      'arf@sustainx.dk'
-    )
-    const employee15 = this.createEmployee(
-      'Jens',
-      'Kruse',
-      '/assets/images/employees/employee-15.svg',
-      'Sustainability Manager & Consultant',
-      '+45 53 70 25 35',
-      'jek@sustainx.dk'
-    )
-    const employee16 = this.createEmployee(
-      'Lile L.',
-      'Rasmussen',
-      '/assets/images/employees/employee-16-320w.png',
-      'Sustainability Project Manager',
-      '+45 22 29 21 40',
-      'llr@sustainx.dk'
-    )
-    const employee17 = this.createEmployee(
-      'Anna',
-      'Malinkowska',
-      '/assets/images/employees/employee-17-320w.png',
-      'Sustainability Consultant',
-      '+45 31 23 11 07',
-      'anm@sustainx.dk'
-    )
-    const employee18 = this.createEmployee(
-      'Peter K.',
-      'Krogh',
-      '/assets/images/employees/employee-18.svg',
-      'Sustainability Graduate',
-      '+47 90 01 12 05',
-      'pek@sustainx.dk'
-    )
-    const employee19 = this.createEmployee(
-      'Amalie',
-      'Bastrup-Birk',
-      '/assets/images/employees/employee-19-320w.png',
-      'Sustainability Manager',
-      '+45 23 95 15 29',
-      'abw@sustainx.dk'
-    )
-    const employee20 = this.createEmployee(
-      'Anne-Freja',
-      'Amsinck',
-      '/assets/images/employees/employee-20-320w.png',
-      'Sustainability Manager',
-      '+45 26 77 74 78',
-      'afa@sustainx.dk'
-    )
-    const employee21 = this.createEmployee(
-      'Georgiana',
-      'Apetroaei',
-      '/assets/images/employees/employee-21.svg',
-      'Sustainability Coordinator',
-      '',
-      'gea@sustainx.dk'
-    )
-    const employee22 = this.createEmployee(
-      'Dana',
-      'Ansberga',
-      '/assets/images/employees/employee-22-320w.png',
-      'Technical Project Manager',
-      '+45 52 82 93 41',
-      'daa@sustainx.dk'
-    )
-    const employee23 = this.createEmployee(
-      'Chantal',
-      'Beck',
-      '/assets/images/employees/employee-23-320w.png',
-      'Academy Associate',
-      '',
-      'cbe@sustainx.dk'
-    )
-    VerboseService.print('Created employees [23]')
   }
 }

@@ -7,7 +7,7 @@
 
 body footer#footer {
   padding: var(--section-margin) var(--section-margin) 0;
-  background: var(--accent-1);
+  // background: var(--accent-1);
   position: relative;
   min-height: 100vh;
   flex-shrink: 0;
@@ -16,11 +16,11 @@ body footer#footer {
   justify-content: center;
 
   h3 {
-    color: var(--dark-1);
+    // color: var(--dark-1);
   }
 
   .grid {
-    color: var(--dark-1);
+    // color: var(--dark-1);
     @include mq(xl) {
       row-gap: 1rem;
     }
@@ -28,7 +28,7 @@ body footer#footer {
     p::after {
       @include divider();
       margin-top: 1rem;
-      background-color: var(--dark-1);
+      // background-color: var(--dark-1);
       left: calc(var(--section-margin) * -1);
     }
 
@@ -83,7 +83,7 @@ body footer#footer {
 
           p {
             font-size: clamp(1.125rem, 2.25vw, 1.375rem);
-            color: var(--dark-1);
+            // color: var(--dark-1);
             font-family: var(--font-1);
             font-weight: 700;
             line-height: 1.1;
@@ -94,7 +94,7 @@ body footer#footer {
             font-size: clamp(1.125rem, 2.25vw, 1.375rem);
             display: block;
             margin-top: clamp(1rem, 3vw, 1.5rem);
-            color: var(--dark-1);
+            // color: var(--dark-1);
             font-family: var(--font-2);
             font-weight: 400;
             line-height: 1.1;
@@ -108,7 +108,7 @@ body footer#footer {
     .newsletter {
       p {
         font-size: clamp(1.125rem, 2.25vw, 1.375rem);
-        color: var(--dark-1);
+        // color: var(--dark-1);
         font-family: var(--font-1);
         font-weight: 700;
         line-height: 1.1;
@@ -120,7 +120,7 @@ body footer#footer {
         font-size: clamp(1.125rem, 2.25vw, 1.375rem);
         display: block;
         margin-top: clamp(1rem, 3vw, 1.5rem);
-        color: var(--dark-1);
+        // color: var(--dark-1);
         font-family: var(--font-2);
         font-weight: 400;
         line-height: 1.1;
@@ -132,16 +132,16 @@ body footer#footer {
 
         input {
           margin-top: clamp(1rem, 3vw, 1.5rem);
-          background-color: var(--accent-1);
           height: 50px;
           width: 100%;
           max-width: 295px;
+          position: relative;
+
           @include mq(sm) {
             max-width: 48vw;
           }
 
           &::placeholder {
-            color: #32a162;
             font-family: var(--font-2);
             font-style: normal;
             font-weight: 400;
@@ -159,17 +159,12 @@ body footer#footer {
           font-family: var(--font-1);
           font-style: normal;
           font-weight: 700;
-          font-size: clamp(1rem, 4vw, 1.25rem);
+          font-size: clamp(0.8rem, 4vw, 1.1rem);
           line-height: 1.5rem;
           height: 50px;
           border-left: 0;
-          background-color: var(--dark-1);
           padding: 0.5rem 2rem 0rem;
           max-width: 140px;
-
-          &:hover {
-            color: var(--light-1);
-          }
         }
       }
     }
@@ -188,7 +183,6 @@ body footer#footer {
 
     .copyright {
       display: flex;
-      // flex-direction: column;
       align-items: flex-end;
       gap: 2rem;
       white-space: nowrap;
@@ -200,7 +194,7 @@ body footer#footer {
         font-weight: 400;
         font-size: clamp(0.875rem, 2vw, 1.25rem);
         line-height: 1;
-        color: var(--dark-1);
+        // color: var(--dark-1);
         padding-bottom: 0.5rem;
       }
 
@@ -224,14 +218,12 @@ body footer#footer {
   #top {
     position: absolute;
     top: 50%;
-    right: 0;
+    right: 6px;
     display: none;
     justify-content: center;
     align-items: center;
-    background-color: var(--dark-1);
     height: 100px;
-    width: 80px;
-    color: var(--light-1);
+    width: 74px;
     font-family: var(--font-1);
     font-style: normal;
     font-weight: 700;

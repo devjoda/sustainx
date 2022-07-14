@@ -1,0 +1,526 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the sustainability management page.
+// -----------------------------------------------------------------------------
+
+@use '../01_abstracts/index' as *;
+
+#sustainability-management.page {
+  #main {
+    .intro-text {
+      .breadcrumb {
+        color: var(--light-1);
+
+        @include mq(lg) {
+          color: var(--dark-1);
+        }
+
+        &::after {
+          left: 15em;
+        }
+      }
+
+      p {
+        color: var(--light-1);
+
+        @include mq(lg) {
+          color: var(--dark-1);
+        }
+      }
+    }
+  }
+
+  #hero-image {
+    background-image: url('../../../images/hero/sustainability-management/hero-sustainability-management-1920w.jpg');
+    filter: brightness(0.9);
+
+    @include mq(lg) {
+      filter: brightness(1);
+    }
+  }
+
+  #intro-section {
+    .body {
+      margin-top: 0;
+    }
+  }
+
+  #the-strategy-house-section {
+    h2 {
+      font-size: clamp(2rem, 10vw, 4rem);
+
+      @include mq(sm) {
+        font-size: clamp(4.5rem, 8vw, 8.5rem);
+      }
+
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
+
+    header {
+      margin-top: 100px;
+
+      @include mq(lg) {
+        .grid {
+          margin-top: var(--section-padding);
+        }
+      }
+    }
+
+    #the-strategy-house {
+      margin-top: var(--section-padding);
+
+      > .svg-wrapper {
+        grid-column: span 12;
+        height: 100%;
+        max-width: 500px;
+
+        @include mq(xxl) {
+          height: 90%;
+          width: 90%;
+          max-width: unset;
+          grid-column: span 6;
+
+          svg {
+            max-height: 750px;
+          }
+        }
+
+        @include mq(qhd) {
+          grid-column: span 6;
+        }
+      }
+
+      .text-wrapper {
+        grid-column: span 12;
+        font-family: var(--font-1);
+        font-style: normal;
+        font-weight: 700;
+        font-size: clamp(1.5rem, 5vw, 2.75rem);
+        margin-top: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include mq(xxl) {
+          grid-column-start: 8;
+          grid-column-end: 13;
+          // grid-column: span 6;
+        }
+
+        @include mq(qhd) {
+          grid-column: span 6;
+        }
+
+        h3 {
+          max-width: 560px;
+          margin-top: 0;
+
+          @include mq(xxl) {
+            max-width: unset;
+            margin: 8rem 0 0;
+          }
+
+          @include mq(qhd) {
+            margin: 10rem 0 0;
+          }
+
+          &::before {
+            @include divider;
+            margin-bottom: 2rem;
+          }
+        }
+
+        p {
+          max-width: 560px;
+
+          a {
+            font-family: var(--font-2);
+            text-decoration: underline;
+
+            &:hover {
+              color: var(--accent-1);
+            }
+          }
+        }
+      }
+
+      .interactive-message {
+        user-select: none;
+        margin-top: 3rem;
+
+        @include mq(xxl) {
+          margin-top: 0;
+        }
+
+        .heading {
+          display: flex;
+          align-items: center;
+
+          p {
+            margin: 0.5rem 0 0 0.75rem;
+            font-family: var(--font-1);
+            font-style: normal;
+            font-weight: 700;
+            font-size: clamp(16px, 5vw, 18px);
+
+            &::after {
+              content: '.';
+            }
+          }
+
+          svg {
+            cursor: var(--default-cursor-dark-1);
+          }
+        }
+
+        p.body {
+          margin-top: 0;
+          font-family: var(--font-2);
+          font-style: normal;
+          font-weight: 400;
+          font-size: clamp(16px, 5vw, 18px);
+          line-height: 1.6;
+          max-width: 15em;
+        }
+      }
+    }
+  }
+
+  #the-subscription-section {
+    h2 {
+      font-size: clamp(2rem, 10vw, 4rem);
+
+      @include mq(sm) {
+        font-size: clamp(4.5rem, 8vw, 8.5rem);
+      }
+
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
+
+    header {
+      margin-top: 100px;
+
+      @include mq(lg) {
+        .grid {
+          margin-top: var(--section-padding);
+        }
+      }
+    }
+  }
+
+  #the-subscription-section-2 {
+    #the-subscription {
+      > .grid {
+        > .grid {
+          grid-column: span 12;
+          row-gap: 3rem;
+
+          @include mq(xl) {
+            row-gap: 1.5rem;
+            grid-column: span 6;
+          }
+
+          @include mq(qhd) {
+            row-gap: 3rem;
+            display: flex;
+            justify-content: space-between;
+            grid-column: span 12;
+          }
+
+          .activity {
+            grid-column: span 12;
+
+            @include mq(qhd) {
+              width: 500px;
+            }
+
+            .count-kicker {
+              margin: 0;
+              line-height: 2.3;
+              font-size: clamp(1rem, 5vw, 18px);
+              &::after {
+                left: 3.5em;
+              }
+            }
+
+            .bg {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: clamp(100px, 15vw, 130px);
+              max-width: 500px;
+
+              @include mq(qhd) {
+                height: 175px;
+              }
+
+              p {
+                margin: 0;
+                padding-top: 0.75rem;
+                font-family: var(--font-1);
+                font-style: normal;
+                font-weight: 700;
+                font-size: clamp(1.5rem, 5vw, 2.5rem);
+              }
+            }
+          }
+        }
+
+        > .text-wrapper {
+          margin-top: 3rem;
+          grid-column: span 12;
+
+          @include mq(xl) {
+            grid-column-start: 8;
+            grid-column-end: 13;
+          }
+
+          @include mq(xxl) {
+            grid-column-start: 7;
+            grid-column-end: 13;
+          }
+
+          @include mq(qhd) {
+            grid-column: span 12;
+          }
+
+          // > .grid {
+
+          h4 {
+            font-family: var(--font-1);
+            font-style: normal;
+            font-weight: 700;
+            font-size: clamp(1.5rem, 5vw, 2.75rem);
+
+            @include mq(xl) {
+              margin: 0;
+            }
+
+            &::after {
+              @include divider;
+            }
+          }
+
+          .text-element {
+            @include mq(qhd) {
+              display: flex;
+              justify-content: space-between;
+            }
+
+            p {
+              max-width: 500px;
+              margin-bottom: 3rem;
+            }
+
+            .article-list {
+              padding: 0 0 0 1rem;
+
+              @include mq(qhd) {
+                display: none;
+              }
+
+              &.qhd {
+                display: none;
+                align-items: flex-end;
+                justify-content: space-between;
+                column-gap: 5.25rem;
+
+                div {
+                  width: 345px;
+                }
+
+                @include mq(qhd) {
+                  display: flex;
+                }
+              }
+
+              li {
+                font-family: var(--font-2);
+                font-weight: 700;
+                line-height: 0.8;
+
+                &::marker {
+                  color: var(--accent-1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #testimonial-section {
+    padding: 0;
+    margin-top: clamp(100px, 15vw, 250px);
+
+    > p {
+      font-family: var(--font-1);
+      font-style: normal;
+      font-weight: 700;
+      font-size: clamp(2rem, 5vw, 6.25rem);
+      max-width: 10em;
+      line-height: 1.2;
+
+      &::after {
+        content: '.';
+      }
+    }
+
+    .testimonial-wrapper {
+      margin-top: clamp(100px, 15vw, 150px);
+
+      .kicker {
+        &::after {
+          @include divider;
+          left: 19.5em;
+        }
+      }
+    }
+  }
+
+  #people-we-have-helped-section {
+    .logo-wrapper {
+      margin-top: clamp(150px, 15vw, 200px);
+      display: flex;
+      gap: 7rem;
+      flex-wrap: wrap;
+
+      .image-wrapper {
+        height: 100%;
+        img {
+          max-height: clamp(70px, 5vw, 110px);
+          height: 100%;
+        }
+      }
+
+      .svg-wrapper {
+        &.dansk-industri {
+          svg {
+            max-height: 60px;
+            width: 100%;
+            height: 100%;
+
+            @include mq(qhd) {
+              max-width: 224px;
+            }
+          }
+        }
+
+        &.svanehoej {
+          svg {
+            max-height: 50px;
+            width: 100%;
+            height: 100%;
+
+            @include mq(qhd) {
+              width: unset;
+            }
+          }
+
+          @include mq(qhd) {
+            flex-basis: 100%;
+            margin-top: 2rem;
+          }
+        }
+      }
+    }
+  }
+
+  #examples-of-our-work-section {
+    margin-bottom: calc(var(--section-padding) + clamp(30px, 5vw, 150px));
+
+    .grid {
+      height: 100%;
+
+      .card {
+        margin-top: clamp(100px, 15vw, 150px);
+      }
+
+      #polytech-card {
+        @include mq(xxl) {
+          transform: translateY(230px);
+        }
+      }
+    }
+  }
+}
+
+body {
+  &.dark-1 {
+    #sustainability-management.page {
+      #the-strategy-house {
+        > .svg-wrapper {
+          .bg {
+            fill: var(--light-1);
+
+            &.active {
+              fill: var(--accent-1);
+            }
+          }
+
+          path {
+            fill: var(--dark-1);
+          }
+        }
+      }
+
+      #the-subscription {
+        .activity {
+          .bg {
+            background-color: var(--light-1);
+
+            &.active {
+              background-color: var(--accent-1);
+            }
+
+            p {
+              color: var(--dark-1);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.light-1 {
+    #sustainability-management.page {
+      #the-strategy-house {
+        > .svg-wrapper {
+          .bg {
+            fill: var(--dark-1);
+
+            &.active {
+              fill: var(--accent-1);
+            }
+          }
+
+          path {
+            fill: var(--light-1);
+          }
+        }
+      }
+
+      #the-subscription {
+        .activity {
+          .bg {
+            background-color: var(--dark-1);
+
+            &.active {
+              background-color: var(--accent-1);
+            }
+
+            p {
+              color: var(--light-1);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -100,6 +100,6 @@
   }
 
   #got-a-problem-section {
-    padding-bottom: var(--section-padding);
+    margin-bottom: clamp(100px, 15vw, 200px);
   }
 }

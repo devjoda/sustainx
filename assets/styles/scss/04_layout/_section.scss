@@ -34,6 +34,12 @@ body div.section {
       height: 100%;
       object-fit: cover;
       pointer-events: none;
+      -webkit-transition: 300ms -webkit-filter ease-in-out;
+      -moz-transition: 300ms -moz-filter ease-in-out;
+      -moz-transition: 300ms filter ease-in-out;
+      -ms-transition: 300ms -ms-filter ease-in-out;
+      -o-transition: 300ms -o-filter ease-in-out;
+      transition: 300ms filter ease-in-out, 300ms -webkit-filter ease-in-out;
     }
   }
 
@@ -56,18 +62,27 @@ body div.section {
     font-family: var(--font-1);
     font-weight: 700;
     &.big-type-message {
-      font-size: 16.5vw;
+      font-size: 12vw;
+      letter-spacing: -0.3rem;
     }
   }
 }
 
 .cta-section {
   img {
+    height: 350px;
+    max-width: 650px;
     width: 100%;
-    height: 400px;
+    object-fit: cover;
 
     @include mq(lg) {
-      height: 740px;
+      width: 100%;
+      height: 495px;
+      max-width: unset;
+    }
+
+    @include mq(xxl) {
+      height: 792px;
     }
   }
 
@@ -76,17 +91,18 @@ body div.section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 650px;
 
     @include mq(lg) {
       grid-column-start: 7;
       grid-column-end: 13;
+      max-width: unset;
     }
 
     p {
       font-family: var(--font-2);
       font-style: normal;
       font-weight: 400;
-      font-size: clamp(1rem, 1.5vw, 1.5rem);
       line-height: 160%;
     }
 
@@ -95,14 +111,234 @@ body div.section {
       font-family: var(--font-1);
       font-style: normal;
       font-weight: 700;
-      font-size: clamp(3rem, 4.75vw, 6.44rem);
-      line-height: 1.2;
-      letter-spacing: -4.5px;
+      font-size: 2.5rem;
+      line-height: 1.1;
+
+      @include mq(xxl) {
+        line-height: 1.2;
+        font-size: clamp(3rem, 4.75vw, 6.44rem);
+        letter-spacing: -4.5px;
+      }
     }
 
     .call-to-action {
       margin-top: 2.5rem;
       padding: 0;
     }
+  }
+}
+
+.cta-section-alt,
+.cta-section-alt-2,
+.cta-section-alt-3 {
+  margin-top: clamp(100px, 15vw, 200px);
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  -webkit-transition: 300ms -webkit-filter ease-in-out;
+  -moz-transition: 300ms -moz-filter ease-in-out;
+  -moz-transition: 300ms filter ease-in-out;
+  -ms-transition: 300ms -ms-filter ease-in-out;
+  -o-transition: 300ms -o-filter ease-in-out;
+  transition: 300ms filter ease-in-out, 300ms -webkit-filter ease-in-out;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+  }
+
+  .text {
+    z-index: 2;
+    position: absolute;
+    left: var(--section-margin);
+    right: var(--section-margin);
+    color: var(--light-1);
+
+    a {
+      margin-top: 2rem;
+      span {
+        color: var(--accent-1);
+        font-size: clamp(18px, 5vw, 28px);
+      }
+      svg {
+        width: clamp(30px, 2.5vw, 34px);
+        height: clamp(30px, 2.5vw, 34px);
+        margin-bottom: 3px;
+      }
+    }
+  }
+}
+
+.cta-section-alt {
+  .text {
+    bottom: var(--section-margin);
+    max-width: 867px;
+    color: var(--light-1);
+
+    h3 {
+      margin: 0;
+      font-family: var(--font-1);
+      font-style: normal;
+      font-weight: 700;
+      font-size: clamp(1.5rem, 5vw, 4rem);
+      line-height: 1.2;
+
+      @include mq(lg) {
+        letter-spacing: -0.28rem;
+      }
+    }
+
+    p {
+      margin: 0;
+      font-family: var(--font-1);
+      font-style: normal;
+      font-weight: 700;
+      font-size: clamp(1.5rem, 5vw, 4rem);
+      line-height: 1.7;
+
+      @include mq(lg) {
+        letter-spacing: -0.28rem;
+      }
+    }
+  }
+}
+
+.cta-section-alt-2 {
+  .text {
+    display: flex;
+    position: absolute;
+    top: var(--section-margin);
+    flex-direction: column;
+    .kicker {
+      display: none;
+
+      @include mq(md) {
+        display: block;
+        position: relative;
+        font-family: var(--font-1);
+        font-style: normal;
+        font-weight: 700;
+        font-size: clamp(12px, 3vw, 27px);
+        line-height: 1.4;
+        letter-spacing: -1.12px;
+        color: var(--dark-1);
+
+        &::after {
+          @include mq(xl) {
+            @include divider();
+            background-color: var(--dark-1);
+            position: absolute;
+            left: 36ch;
+            top: 40%;
+          }
+        }
+      }
+    }
+
+    .heading {
+      margin: 2.8rem 0 0;
+      font-family: var(--font-1);
+      font-style: normal;
+      font-weight: 700;
+      font-size: clamp(3rem, 5vw, 6.4375rem);
+      line-height: 1.1;
+      letter-spacing: -4.5px;
+      color: var(--dark-1);
+    }
+
+    .call-to-action {
+      margin-top: 2rem;
+      span {
+        color: var(--dark-1);
+      }
+
+      &:hover {
+        span {
+          color: var(--dark-1) !important;
+        }
+      }
+    }
+  }
+}
+
+.cta-section-alt-3 {
+  .text {
+    display: flex;
+    position: absolute;
+    bottom: var(--section-margin);
+    flex-direction: column;
+
+    .kicker {
+      font-size: clamp(16px, 5vw, 18px);
+      position: relative;
+      &::after {
+        @include divider();
+        // background-color: var(--dark-1);
+        position: absolute;
+        left: 7em;
+        top: 0.5em;
+      }
+    }
+
+    p {
+      &.price {
+        .large {
+          display: inline;
+          font-family: var(--font-2);
+          font-style: normal;
+          font-weight: 400;
+          font-size: clamp(1.5rem, 5vw, 2.125rem);
+        }
+
+        .bold {
+          font-weight: 700;
+        }
+      }
+
+      &.body {
+        max-width: 12em;
+      }
+    }
+  }
+
+  .call-to-action {
+    margin-top: 2rem;
+    span {
+      color: var(--light-1) !important;
+    }
+
+    &:hover {
+      span {
+        color: var(--accent-1) !important;
+      }
+    }
+  }
+}
+
+#content.section {
+  padding: 0;
+  margin-top: var(--section-margin);
+  .grid {
+    .wrapper.width-6\/12 {
+      h3:first-child {
+        margin: 0;
+      }
+    }
+  }
+
+  a {
+    margin-top: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    font-family: var(--font-2);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.0019rem;
+    text-decoration: underline;
   }
 }

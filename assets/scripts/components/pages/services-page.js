@@ -24,8 +24,8 @@ export default class ServicesPage extends Page {
     EventListenerService.onClickBurgerOpen()
     EventListenerService.onClickTop()
     EventListenerService.bindOnClick()
-    ObserverService.observeHero()
-    ObserverService.observeFooter()
+    EventListenerService.toggleSiteLogoThemeColors(['dark-1', 'light-1'])
+    ObserverService.observeHero(['dark-1', 'light-1'])
     ObserverService.observe(
       '#big-type-message-section-1',
       false,
@@ -35,6 +35,16 @@ export default class ServicesPage extends Page {
       ['light-1', 'dark-1'],
       ['light-1', 'dark-1'],
       ['dark-1', 'light-1']
+    )
+    ObserverService.observe(
+      '#footer',
+      false,
+      null,
+      0,
+      '500px 0px -500px 0px',
+      ['accent-1', 'light-1'],
+      ['accent-1', 'dark-1'],
+      ['accent-1', 'dark-1']
     )
   }
 }

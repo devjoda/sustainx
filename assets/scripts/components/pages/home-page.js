@@ -28,7 +28,6 @@ export default class HomePage extends Page {
     EventListenerService.onEndedForceReplayVideos()
     EventListenerService.bindOnClick()
     ObserverService.observeHero()
-    ObserverService.observeFooter()
     ObserverService.observe(
       '#insights-section',
       false,
@@ -36,8 +35,18 @@ export default class HomePage extends Page {
       1,
       '300px 0px -900px 0px',
       ['light-1', 'dark-1'],
-      ['light-1', 'dark-1'],
+      ['dark-1', 'light-1'],
       ['dark-1', 'light-1']
+    )
+    ObserverService.observe(
+      '#footer',
+      false,
+      null,
+      0,
+      '500px 0px -500px 0px',
+      ['accent-1', 'light-1'],
+      ['accent-1', 'dark-1'],
+      ['accent-1', 'dark-1']
     )
   }
 }

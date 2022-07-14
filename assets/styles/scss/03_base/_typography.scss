@@ -39,7 +39,11 @@ h3 {
 }
 
 // Paragraph styling
-p {
+p,
+blockquote,
+.article-heading,
+.article-list,
+.article-list li {
   margin-top: 1em;
   margin-left: 0;
   margin-right: 0;
@@ -62,17 +66,72 @@ p {
 
   @include mq(sm) {
     font-size: 1.125rem;
-    line-height: 145%;
   }
 
   @include mq(md) {
     font-size: 1.25rem;
-    line-height: 150%;
   }
 
   @include mq(lg) {
     font-size: 1.375rem;
-    line-height: 160%;
+  }
+  @include mq(qhd) {
+    font-size: 1.5rem;
+  }
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.article-heading {
+  margin-top: 3rem;
+  font-family: var(--font-1) !important;
+  font-weight: 700;
+}
+
+.article-list {
+  span {
+    padding: 0;
+  }
+
+  li {
+    cursor: var(--cursor-default-dark-1);
+    line-height: 1.6;
+  }
+
+  li:first-child {
+    margin-top: 2rem;
+  }
+
+  li:last-child {
+    margin-bottom: 3rem;
+  }
+}
+
+blockquote {
+  margin: 0;
+  font-family: var(--font-2);
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 5vw, 4.2rem);
+  line-height: 1.2;
+  letter-spacing: -1px;
+
+  cite {
+    line-height: 1;
+    font-family: var(--font-1);
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(16px, 5vw, 22px);
+
+    &::before {
+      @include divider;
+      height: 2px;
+      width: 80%;
+      max-width: 25rem;
+      margin-top: 1.5rem;
+    }
   }
 }
 

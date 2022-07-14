@@ -5,7 +5,7 @@
 @use '../01_abstracts/mixins' as *;
 
 #main {
-  header {
+  > header {
     position: relative;
     height: 100vh;
     width: 100vw;
@@ -28,10 +28,40 @@
       #hero-background-color {
         display: none;
         height: 100%;
-        width: clamp(300px, 23vw, 700px);
+        width: 685px;
 
         @include mq(lg) {
           display: unset;
+        }
+      }
+
+      #hero-left {
+        img {
+          object-fit: cover;
+          object-position: top;
+          height: 100vh;
+          width: 100vw;
+          transition: none;
+
+          @include mq(lg) {
+            width: 50vw;
+          }
+        }
+      }
+
+      #hero-right {
+        display: none;
+
+        @include mq(lg) {
+          display: unset;
+        }
+
+        img {
+          object-fit: cover;
+          object-position: top;
+          height: 100vh;
+          width: 50vw;
+          transition: none;
         }
       }
     }
@@ -87,7 +117,7 @@
         font-family: var(--font-1);
         font-style: normal;
         font-weight: 700;
-        font-size: clamp(3rem, 7.5vw, 8.5rem);
+        font-size: clamp(4rem, 10.5vw, 8.5rem);
         line-height: 1.4;
         @include mq(xxl) {
           line-height: 1.2;

@@ -1,0 +1,149 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the employees page.
+// -----------------------------------------------------------------------------
+
+@use '../01_abstracts/index' as *;
+
+#employees.page {
+  #main {
+    .intro-text {
+      span.breadcrumb {
+        &::after {
+          left: 115px;
+        }
+      }
+    }
+  }
+
+  .title-container {
+    .primary {
+      margin: 0 0 0 var(--section-margin);
+      position: absolute;
+      left: 0;
+      bottom: 30px;
+      .hero-title {
+        margin: 0;
+        font-family: var(--font-1);
+        font-style: normal;
+        font-weight: 700;
+        font-size: clamp(1.125rem, 7vw, 8.75rem);
+        line-height: 1.4;
+        letter-spacing: -0.05em;
+
+        @include mq(md) {
+          line-height: 1.3;
+        }
+
+        @include mq(lg) {
+          line-height: 1.2;
+        }
+
+        @include mq(xl) {
+          line-height: 1.1;
+        }
+
+        @include mq(xxl) {
+          line-height: 1;
+        }
+
+        &::after {
+          content: '.';
+        }
+      }
+    }
+
+    .secondary {
+      margin: 0 var(--section-margin) 0;
+      position: absolute;
+      right: 0;
+      bottom: 45px;
+      display: none;
+
+      @include mq(qhd) {
+        display: unset;
+      }
+
+      p {
+        color: var(--light-1);
+        font-family: var(--font-1);
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.75rem;
+
+        &::before {
+          @include divider;
+          margin-bottom: 1.5rem;
+          background-color: var(--light-1);
+        }
+      }
+    }
+  }
+
+  .full-container {
+    margin-top: var(--section-margin);
+    height: 500px;
+    width: 100%;
+    background-color: var(--light-1);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    @include mq(lg) {
+      height: 100vh;
+    }
+
+    img,
+    svg {
+      max-height: 90%;
+      max-width: 80%;
+    }
+
+    svg {
+      path {
+        fill: var(--dark-1);
+      }
+    }
+  }
+
+  #content {
+    .contact-info {
+      margin-top: clamp(3rem, 5vw, 6rem);
+      display: flex;
+      gap: 2rem;
+
+      .phone,
+      .email {
+        margin-top: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        font-family: var(--font-2);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1rem;
+        letter-spacing: 0.0019rem;
+
+        @include mq(sm) {
+          font-size: 1.125rem;
+        }
+
+        @include mq(md) {
+          font-size: 1.25rem;
+        }
+
+        @include mq(lg) {
+          font-size: 1.375rem;
+        }
+        @include mq(qhd) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  #cta-section {
+    img {
+      object-position: right;
+    }
+  }
+}

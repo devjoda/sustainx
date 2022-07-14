@@ -25,6 +25,15 @@ export default class WorkPage extends Page {
     EventListenerService.onClickTop()
     EventListenerService.bindOnClick()
     ObserverService.observeHero()
-    ObserverService.observeFooter()
+    ObserverService.observe(
+      '#footer',
+      false,
+      null,
+      0,
+      '500px 0px -500px 0px',
+      ['accent-1', 'light-1'],
+      ['accent-1', 'dark-1'],
+      ['accent-1', 'dark-1']
+    )
   }
 }

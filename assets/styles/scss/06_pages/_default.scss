@@ -1,0 +1,52 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the default page.
+// -----------------------------------------------------------------------------
+
+@use '../01_abstracts/index' as *;
+
+#default.page {
+  #main {
+    header {
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+
+      @include mq-h(md) {
+        height: 66vh;
+      }
+    }
+
+    .intro-text {
+      span.breadcrumb {
+        &::after {
+          left: 105px;
+        }
+      }
+    }
+  }
+
+  .hero-title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-family: var(--font-1);
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 13vw, 10rem);
+    line-height: 1.1;
+    letter-spacing: -0.05em;
+    margin: 0 var(--section-margin) 0;
+
+    @include mq(sm) {
+      white-space: nowrap;
+    }
+
+    &::after {
+      content: '.';
+    }
+  }
+
+  #content.section {
+    margin-bottom: var(--section-margin);
+  }
+}

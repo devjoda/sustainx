@@ -21,13 +21,14 @@
 
   #featured-cases-section {
     .work-wrapper {
-      margin: calc(var(--section-padding) * 0.5) 0;
+      margin: calc(var(--section-padding) * 0.5) 0 calc(var(--section-padding) + clamp(30px, 5vw, 150px));
 
       .grid {
         height: 100%;
 
         .card {
           margin-top: calc(var(--section-padding) + clamp(60px, 5vw, 150px));
+          background-color: var(--light-1);
         }
 
         #globus-wine-card {
@@ -37,9 +38,5 @@
         }
       }
     }
-  }
-
-  #footer {
-    margin-top: calc(var(--section-padding) + clamp(30px, 5vw, 150px));
   }
 }

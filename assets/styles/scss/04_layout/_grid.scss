@@ -71,6 +71,15 @@
   @include mq(lg) {
     grid-column: span 6;
   }
+
+  &.right {
+    grid-column: span 12;
+
+    @include mq(lg) {
+      grid-column-start: 7;
+      grid-column-end: 13;
+    }
+  }
 }
 
 .width-6\/12-xl {

@@ -5,4 +5,158 @@
 @use '../01_abstracts/index' as *;
 
 #distilled.page {
+  #main {
+    .intro-text {
+      span.breadcrumb {
+        &::after {
+          left: 6.57rem;
+        }
+      }
+    }
+  }
+
+  #hero-image {
+    background-image: url('../../../images/hero/distilled/hero-distilled-1920w.jpg');
+  }
+
+  .article {
+    &.news {
+      .kicker {
+        &::after {
+          left: 6ch;
+        }
+        &.job {
+          &::after {
+            left: 15ch;
+          }
+        }
+      }
+    }
+
+    &.insight {
+      .kicker {
+        &::after {
+          left: 7.25ch;
+        }
+      }
+    }
+
+    .image-wrapper {
+      overflow: hidden;
+      width: 100%;
+      height: 300px;
+
+      @include mq(md) {
+        height: 400px;
+      }
+
+      @include mq(lg) {
+        height: 450px;
+      }
+
+      @include mq(xl) {
+        height: 500px;
+      }
+
+      @include mq(xxl) {
+        height: 550px;
+      }
+
+      @include mq(qhd) {
+        height: 611px;
+      }
+    }
+
+    .job-opportunity {
+      background-color: var(--jobs);
+      display: flex;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      height: 300px;
+      width: 100%;
+
+      @include mq(md) {
+        height: 400px;
+      }
+
+      @include mq(lg) {
+        height: 450px;
+      }
+
+      @include mq(xl) {
+        height: 500px;
+      }
+
+      @include mq(xxl) {
+        height: 550px;
+      }
+
+      @include mq(qhd) {
+        height: 611px;
+      }
+
+      p {
+        font-family: var(--font-1);
+        color: var(--dark-1);
+        font-style: normal;
+        font-weight: 700;
+        font-size: clamp(1.5rem, 5vw, 4rem);
+        line-height: 1.3;
+        text-align: center;
+        letter-spacing: -0.05em;
+        padding: 0 1.5rem;
+        margin: 0;
+        max-width: unset;
+        user-select: none;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .kicker {
+    margin-top: clamp(1.5rem, 5vw, 2.5rem);
+    position: relative;
+    font-family: var(--font-1);
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(0.875rem, 5vw, 1.125rem);
+    line-height: 1.3;
+
+    &::after {
+      @include divider;
+      position: absolute;
+      top: 35%;
+    }
+  }
+
+  h3 {
+    margin-top: clamp(1.25rem, 5vw, 2rem);
+  }
+
+  #featured-section {
+    .article {
+      .image-wrapper {
+        margin-top: clamp(100px, 15vw, 200px);
+      }
+    }
+  }
+
+  #all-news-section,
+  #all-insights-section {
+    .grid {
+      margin-top: clamp(100px, 15vw, 200px);
+      row-gap: 150px;
+
+      @include mq(lg) {
+        row-gap: 100px;
+      }
+    }
+  }
 }

@@ -77,9 +77,9 @@ export default class Page {
     if (!body || !mainNavigation || !mainHeader) {
       return false
     }
-    body.className = `${this._bodyThemeColor} prevent-initial-callback`
-    mainHeader.className = `${this._siteLogoThemeColor} transparent prevent-initial-callback`
-    mainNavigation.className = `${this._menuItemsThemeColor} prevent-initial-callback`
+    body.className = `${this._bodyThemeColor}`
+    mainHeader.className = `${this._siteLogoThemeColor} transparent`
+    mainNavigation.className = `${this._menuItemsThemeColor}`
     VerboseService.print('Updated theme colors')
   }
 

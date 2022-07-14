@@ -39,6 +39,7 @@ body {
   }
 
   #main,
+  #footer,
   h1,
   h2,
   h3,
@@ -87,6 +88,11 @@ img {
   &.full {
     margin-top: var(--section-padding);
     height: 100vh;
+    width: 100%;
+  }
+  &.full-alt {
+    margin-top: var(--section-padding);
+    height: 100%;
     width: 100%;
   }
 }

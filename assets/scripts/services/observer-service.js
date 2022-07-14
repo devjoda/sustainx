@@ -78,20 +78,13 @@ export default class ObserverService {
     const target = CrudService.createDomElement(selector)
     // jeg bruger optional chaining (?.) til at læse værdien af arrayet
     // uden at skulle tage forbehold for om arrayet er validt
-    if (!target || classes?.length !== 2) {
+    if (!target || classes?.length !== 2 || StorageService.preventObserverCallback) {
       return false
     }
-    // kontrolstruktur som er indsat for at undgå at callback funktionen
-    // affyres, når observeren oprettes (default behaviour)
-    if (target.classList.contains('prevent-initial-callback')) {
-      target.classList.remove('prevent-initial-callback')
-      return target
-    }
     if (target.classList.contains(classes[0])) {
-      target.classList.replace(classes[0], classes[1])
+      target.className = classes[1]
     } else {
-      target.classList.remove(classes[1])
-      target.classList.add(classes[0])
+      target.className = classes[0]
     }
     return target
   }
@@ -103,10 +96,10 @@ export default class ObserverService {
    * @static
    * @memberof ObserverService
    */
-  static observeHero() {
+  static observeHero(navigationClasses) {
     const callbackFunction = function (entry) {
-      const menuItems = document.querySelectorAll('li.menu-item.desktop')
       const siteLogo = StorageService.domElements.get('site-logo')
+      const menuItems = document.querySelectorAll('li.menu-item.desktop')
       if (!siteLogo || !menuItems) {
         return false
       }
@@ -128,6 +121,27 @@ export default class ObserverService {
         // Gendanner transition til 'none' for at få instant hover effekt
         siteLogo.style.setProperty('transition', 'none')
       }, '200')
+    }
+    if (navigationClasses) {
+      const callBackFunction2 = function (entry) {
+        const heroImage = document.querySelector('div#hero-image')
+        const mainHeader = StorageService.domElements.get('main-header')
+        const mainNavigation = StorageService.domElements.get('main-navigation')
+        const heroImageHeight = heroImage.offsetHeight
+        const viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+        if (heroImageHeight > window.pageYOffset) {
+          mainNavigation.classList.replace(navigationClasses[1], navigationClasses[0])
+          if (viewportWidth <= 992) {
+            mainHeader.classList.replace(navigationClasses[1], navigationClasses[0])
+          }
+        } else {
+          if (viewportWidth <= 992) {
+            mainHeader.classList.replace(navigationClasses[0], navigationClasses[1])
+          }
+          mainNavigation.classList.replace(navigationClasses[0], navigationClasses[1])
+        }
+      }
+      CrudService.createObserver('div#hero-image', callBackFunction2, false, null, 0, '0px 0px 500px 0px')
     }
     CrudService.createObserver('.hero', callbackFunction, false, null, 0, '0px 0px 0px 0px')
     VerboseService.print('Created observer [.hero]')
@@ -158,24 +172,5 @@ export default class ObserverService {
       CrudService.createObserver(selector, callbackFunction, false, null, 1, '0px 0px -650px 0px')
       VerboseService.print(`Created observer [${selector}]`)
     }
-  }
-
-  static observeFooter() {
-    const callbackFunction = function (entry) {
-      const siteLogo = document.querySelector('#site-logo-wrapper')
-      const burgerOpen = document.querySelector('li#burger-open')
-      if (!siteLogo || !burgerOpen) {
-        return false
-      }
-      if (entry.isIntersecting) {
-        siteLogo.classList.add('no-accent')
-        burgerOpen.classList.add('no-accent')
-      } else {
-        siteLogo.classList.remove('no-accent')
-        burgerOpen.classList.remove('no-accent')
-      }
-    }
-    CrudService.createObserver('#footer', callbackFunction, false, null, 1, '0px 0px -700px 0px')
-    VerboseService.print('Created observer [#footer]')
   }
 }

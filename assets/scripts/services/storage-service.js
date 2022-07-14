@@ -32,13 +32,15 @@ export default class StorageService {
   static domElements = new Map()
   static observers = new Set()
   static employees = new Set()
+  static jobOpportunities = new Set()
   static swipers = new Set()
+  static preventObserverCallback = true
   static verbose = true
   static previousPageYOffset = 0
   static scrollDirection = 'down'
 
   static init() {
     CrudService.createAllDomElements()
-    VerboseService.print('StorageService initialised')
+    VerboseService.print('StorageService initialized')
   }
 }

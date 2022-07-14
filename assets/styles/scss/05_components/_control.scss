@@ -1,0 +1,51 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to segmented controls
+// -----------------------------------------------------------------------------
+
+@use '../01_abstracts/index' as *;
+
+.segmented-control {
+  -webkit-appearance: none;
+  border: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+
+  input {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .segmented-control-label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  label.segmented-control-option {
+    background: transparent;
+
+    cursor: pointer;
+    position: relative;
+
+    span {
+      color: var(--dark-1);
+      padding: 0.75rem 1rem 0.5rem;
+    }
+
+    :checked + span {
+      background: var(--accent-1);
+      font-weight: bold;
+    }
+  }
+}

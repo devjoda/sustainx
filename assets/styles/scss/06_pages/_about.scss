@@ -20,7 +20,7 @@
   }
 
   #intro-section {
-    .lead + p {
+    .body {
       margin-top: clamp(50px, 5vw, 100px);
     }
   }
