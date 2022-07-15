@@ -38,6 +38,7 @@ export default class StorageService {
   static verbose = true
   static previousPageYOffset = 0
   static scrollDirection = 'down'
+  static basename = '/sustainx'
 
   static init() {
     CrudService.createAllDomElements()
