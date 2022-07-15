@@ -228,7 +228,7 @@ export default class CrudService {
 
   static createAllJobOpportunities() {
     this.createJobOpportunity('Marketing Lead', `${StorageService.basename}/job-opportunities/marketing-lead.html`)
-    this.createJobOpportunity('Project Manager', `${StorageService.basename}'/job-opportunities/project-manager.html`)
+    this.createJobOpportunity('Project Manager', `${StorageService.basename}/job-opportunities/project-manager.html`)
     this.createJobOpportunity('Student Content Writer', `${StorageService.basename}/job-opportunities/student-content-writer.html`)
   }
 
