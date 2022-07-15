@@ -16,7 +16,7 @@
   }
 
   #hero-image {
-    background-image: url('../../../images/hero/sustainability-networks/hero-sustainability-networks-1920w.jpg');
+    background-image: url('../../images/hero/sustainability-networks/hero-sustainability-networks-1920w.jpg');
     filter: brightness(0.9);
 
     @include mq(lg) {

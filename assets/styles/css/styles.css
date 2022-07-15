@@ -27,8 +27,8 @@
   --border-radius: 0;
   --box-shadow: rgb(0 0 0 / 8%) 0 4px 40px 0px;
   --gutter-x: 9px;
-  --default-cursor-dark-1: url("../../../images/svg/cursor/cursor-default-dark-1.svg"), default;
-  --pointer-cursor-dark-1: url("../../../images/svg/cursor/cursor-pointer-dark-1.svg") 10 0, pointer;
+  --default-cursor-dark-1: url("../../images/svg/cursor/cursor-default-dark-1.svg"), default;
+  --pointer-cursor-dark-1: url("../../images/svg/cursor/cursor-pointer-dark-1.svg") 10 0, pointer;
 }
 @media only screen and (min-width: 576px) {
   :root {
@@ -4703,7 +4703,7 @@ input:focus {
   left: 6.57rem;
 }
 #services.page #hero-image {
-  background-image: url("../../../images/hero/services/hero-services-1920w.jpg");
+  background-image: url("../../images/hero/services/hero-services-1920w.jpg");
 }
 #services.page #what-are-you-interested-in-section h2::after {
   content: "";
@@ -4799,7 +4799,7 @@ input:focus {
   left: 4.5rem;
 }
 #work.page #hero-image {
-  background-image: url("../../../images/hero/work/hero-work-1920w.jpg");
+  background-image: url("../../images/hero/work/hero-work-1920w.jpg");
 }
 #work.page #featured-cases-section .work-wrapper {
   margin: calc(var(--section-padding) * 0.5) 0 calc(var(--section-padding) + clamp(30px, 5vw, 150px));
@@ -4822,7 +4822,7 @@ input:focus {
   left: 5.1rem;
 }
 #about.page #hero-image {
-  background-image: url("../../../images/hero/about/hero-about-1920w.jpg");
+  background-image: url("../../images/hero/about/hero-about-1920w.jpg");
 }
 #about.page #intro-section .body {
   margin-top: clamp(50px, 5vw, 100px);
@@ -5157,7 +5157,7 @@ input:focus {
 }
 @media only screen and (min-width: 992px) {
   #jobs.page #main header .hero-image-wrapper #hero-image {
-    background-image: url("../../../images/hero/jobs/hero-jobs-1920w.jpg");
+    background-image: url("../../images/hero/jobs/hero-jobs-1920w.jpg");
     opacity: 0.95;
   }
 }
@@ -5631,7 +5631,7 @@ input:focus {
   left: 6.57rem;
 }
 #distilled.page #hero-image {
-  background-image: url("../../../images/hero/distilled/hero-distilled-1920w.jpg");
+  background-image: url("../../images/hero/distilled/hero-distilled-1920w.jpg");
 }
 #distilled.page .article.news .kicker::after {
   left: 6ch;
@@ -6309,7 +6309,7 @@ input:focus {
   }
 }
 #sustainability-management.page #hero-image {
-  background-image: url("../../../images/hero/sustainability-management/hero-sustainability-management-1920w.jpg");
+  background-image: url("../../images/hero/sustainability-management/hero-sustainability-management-1920w.jpg");
   -webkit-filter: brightness(0.9);
           filter: brightness(0.9);
 }
@@ -6798,7 +6798,7 @@ body.light-1 #sustainability-management.page #the-subscription .activity .bg p {
   left: 13em;
 }
 #sustainability-networks.page #hero-image {
-  background-image: url("../../../images/hero/sustainability-networks/hero-sustainability-networks-1920w.jpg");
+  background-image: url("../../images/hero/sustainability-networks/hero-sustainability-networks-1920w.jpg");
   -webkit-filter: brightness(0.9);
           filter: brightness(0.9);
 }
@@ -6870,7 +6870,7 @@ body.light-1 #sustainability-management.page #the-subscription .activity .bg p {
   left: 13.5em;
 }
 #sustainability-education.page #hero-image {
-  background-image: url("../../../images/hero/sustainability-education/hero-sustainability-education-1920w.jpg");
+  background-image: url("../../images/hero/sustainability-education/hero-sustainability-education-1920w.jpg");
   -webkit-filter: brightness(0.9);
           filter: brightness(0.9);
 }
@@ -7272,19 +7272,19 @@ body.light-1 #sustainability-management.page #the-subscription .activity .bg p {
   background-position: center;
 }
 #sustainability-education.page #workshops-conferences-and-leadership-training-section .grid .image-wrapper.meeting {
-  background-image: url("../../../images/pages/sustainability-education/meeting-480w.jpg");
+  background-image: url("../../images/pages/sustainability-education/meeting-480w.jpg");
 }
 @media only screen and (min-width: 576px) {
   #sustainability-education.page #workshops-conferences-and-leadership-training-section .grid .image-wrapper.meeting {
-    background-image: url("../../../images/pages/sustainability-education/meeting-768w.jpg");
+    background-image: url("../../images/pages/sustainability-education/meeting-768w.jpg");
   }
 }
 #sustainability-education.page #workshops-conferences-and-leadership-training-section .grid .image-wrapper.paper-boats {
-  background-image: url("../../../images/pages/sustainability-education/paper-boats-480w.jpg");
+  background-image: url("../../images/pages/sustainability-education/paper-boats-480w.jpg");
 }
 @media only screen and (min-width: 576px) {
   #sustainability-education.page #workshops-conferences-and-leadership-training-section .grid .image-wrapper.paper-boats {
-    background-image: url("../../../images/pages/sustainability-education/paper-boats-768w.jpg");
+    background-image: url("../../images/pages/sustainability-education/paper-boats-768w.jpg");
   }
 }
 #sustainability-education.page #workshops-conferences-and-leadership-training-section .grid .text h3 {
@@ -7898,10 +7898,10 @@ body.light-1 #sustainability-management.page #the-subscription .activity .bg p {
           filter: brightness(0.9);
 }
 #networks.page #hero-image.momentum {
-  background-image: url("../../../images/hero/momentum-network/hero-momentum-network-1920w.jpg");
+  background-image: url("../../images/hero/momentum-network/hero-momentum-network-1920w.jpg");
 }
 #networks.page #hero-image.act {
-  background-image: url("../../../images/hero/act-network/hero-act-network-1920w.jpg");
+  background-image: url("../../images/hero/act-network/hero-act-network-1920w.jpg");
 }
 @media only screen and (min-width: 992px) {
   #networks.page #hero-image {

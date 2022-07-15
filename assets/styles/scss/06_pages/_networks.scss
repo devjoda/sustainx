@@ -38,11 +38,11 @@
     filter: brightness(0.9);
 
     &.momentum {
-      background-image: url('../../../images/hero/momentum-network/hero-momentum-network-1920w.jpg');
+      background-image: url('../../images/hero/momentum-network/hero-momentum-network-1920w.jpg');
     }
 
     &.act {
-      background-image: url('../../../images/hero/act-network/hero-act-network-1920w.jpg');
+      background-image: url('../../images/hero/act-network/hero-act-network-1920w.jpg');
     }
 
     @include mq(lg) {

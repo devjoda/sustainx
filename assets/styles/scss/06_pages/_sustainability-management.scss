@@ -30,7 +30,7 @@
   }
 
   #hero-image {
-    background-image: url('../../../images/hero/sustainability-management/hero-sustainability-management-1920w.jpg');
+    background-image: url('../../images/hero/sustainability-management/hero-sustainability-management-1920w.jpg');
     filter: brightness(0.9);
 
     @include mq(lg) {

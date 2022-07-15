@@ -16,7 +16,7 @@
   }
 
   #hero-image {
-    background-image: url('../../../images/hero/sustainability-education/hero-sustainability-education-1920w.jpg');
+    background-image: url('../../images/hero/sustainability-education/hero-sustainability-education-1920w.jpg');
     filter: brightness(0.9);
 
     @include mq(lg) {
@@ -389,18 +389,18 @@
         background-position: center;
 
         &.meeting {
-          background-image: url('../../../images/pages/sustainability-education/meeting-480w.jpg');
+          background-image: url('../../images/pages/sustainability-education/meeting-480w.jpg');
 
           @include mq(sm) {
-            background-image: url('../../../images/pages/sustainability-education/meeting-768w.jpg');
+            background-image: url('../../images/pages/sustainability-education/meeting-768w.jpg');
           }
         }
 
         &.paper-boats {
-          background-image: url('../../../images/pages/sustainability-education/paper-boats-480w.jpg');
+          background-image: url('../../images/pages/sustainability-education/paper-boats-480w.jpg');
 
           @include mq(sm) {
-            background-image: url('../../../images/pages/sustainability-education/paper-boats-768w.jpg');
+            background-image: url('../../images/pages/sustainability-education/paper-boats-768w.jpg');
           }
         }
       }

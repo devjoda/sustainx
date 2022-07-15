@@ -17,7 +17,7 @@
           background-image: none;
 
           @include mq(lg) {
-            background-image: url('../../../images/hero/jobs/hero-jobs-1920w.jpg');
+            background-image: url('../../images/hero/jobs/hero-jobs-1920w.jpg');
             opacity: 0.95;
           }
         }
