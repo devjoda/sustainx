@@ -67,36 +67,36 @@ export default class CrudService {
       default:
         const locationPathname = location.pathname
         // news
-        if (locationPathname.substring(1, 5).localeCompare('news', 'en', { sensitivity: 'base' }) === 0) {
+        if (locationPathname.substring(10, 23).localeCompare('news', 'en', { sensitivity: 'base' }) === 0) {
           newPage = new NewsPage('news', 'light-1', 'dark-1', 'dark-1')
           // insights
-        } else if (locationPathname.substring(1, 9).localeCompare('insights', 'en', { sensitivity: 'base' }) === 0) {
+        } else if (locationPathname.substring(10, 18).localeCompare('insights', 'en', { sensitivity: 'base' }) === 0) {
           newPage = new InsightsPage('insights', 'light-1', 'dark-1', 'dark-1')
         } // job-opportunities
-        else if (locationPathname.substring(1, 18).localeCompare('job-opportunities', 'en', { sensitivity: 'base' }) === 0) {
+        else if (locationPathname.substring(10, 27).localeCompare('job-opportunities', 'en', { sensitivity: 'base' }) === 0) {
           newPage = new JobOpportunitiesPage('job-opportunities', 'dark-1', 'light-1', 'light-1')
         } // employees
-        else if (locationPathname.substring(1, 10).localeCompare('employees', 'en', { sensitivity: 'base' }) === 0) {
+        else if (locationPathname.substring(10, 19).localeCompare('employees', 'en', { sensitivity: 'base' }) === 0) {
           newPage = new EmployeesPage('employees', 'dark-1', 'light-1', 'light-1')
         } // services
-        else if (locationPathname.substring(1, 9).localeCompare('services', 'en', { sensitivity: 'base' }) === 0) {
-          if (locationPathname.substring(25, 35).localeCompare('management', 'en', { sensitivity: 'base' }) === 0) {
+        else if (locationPathname.substring(10, 18).localeCompare('services', 'en', { sensitivity: 'base' }) === 0) {
+          if (locationPathname.substring(34, 44).localeCompare('management', 'en', { sensitivity: 'base' }) === 0) {
             newPage = new SustainabilityManagementPage('sustainability-management', 'light-1', 'dark-1', 'light-1')
-          } else if (locationPathname.substring(25, 33).localeCompare('networks', 'en', { sensitivity: 'base' }) === 0) {
+          } else if (locationPathname.substring(34, 42).localeCompare('networks', 'en', { sensitivity: 'base' }) === 0) {
             newPage = new SustainabilityNetworksPage('sustainability-networks', 'dark-1', 'light-1', 'light-1')
-          } else if (locationPathname.substring(25, 34).localeCompare('education', 'en', { sensitivity: 'base' }) === 0) {
+          } else if (locationPathname.substring(34, 43).localeCompare('education', 'en', { sensitivity: 'base' }) === 0) {
             newPage = new SustainabilityEducationPage('sustainability-education', 'light-1', 'dark-1', 'dark-1')
           }
         } // networks
-        else if (locationPathname.substring(1, 9).localeCompare('networks', 'en', { sensitivity: 'base' }) === 0) {
+        else if (locationPathname.substring(10, 18).localeCompare('networks', 'en', { sensitivity: 'base' }) === 0) {
           newPage = new NetworksPage('networks', 'light-1', 'dark-1', 'dark-1')
         } // case studies
-        else if (locationPathname.substring(1, 5).localeCompare('work', 'en', { sensitivity: 'base' }) === 0) {
-          if (locationPathname.substring(6, 19).localeCompare('case-study-01', 'en', { sensitivity: 'base' }) === 0) {
+        else if (locationPathname.substring(10, 14).localeCompare('work', 'en', { sensitivity: 'base' }) === 0) {
+          if (locationPathname.substring(15, 28).localeCompare('case-study-01', 'en', { sensitivity: 'base' }) === 0) {
             newPage = new CaseStudyPage('case-study-01', 'valencia', 'light-1', 'light-1')
-          } else if (locationPathname.substring(6, 19).localeCompare('case-study-02', 'en', { sensitivity: 'base' }) === 0) {
+          } else if (locationPathname.substring(15, 28).localeCompare('case-study-02', 'en', { sensitivity: 'base' }) === 0) {
             newPage = new CaseStudyPage('case-study-02', 'matisse', 'light-1', 'light-1')
-          } else if (locationPathname.substring(6, 19).localeCompare('case-study-03', 'en', { sensitivity: 'base' }) === 0) {
+          } else if (locationPathname.substring(15, 28).localeCompare('case-study-03', 'en', { sensitivity: 'base' }) === 0) {
             newPage = new CaseStudyPage('case-study-03', 'tapestry', 'light-1', 'light-1')
           } else {
             newPage = new CaseStudyPage('case-study-default', 'dark', 'light-1', 'light-1')
